@@ -43,12 +43,16 @@ fun main (args: Array<String>){
 
             val notas = arrayListOf<Int>(1,2,3,4,5,6)
 
+
+
             // FOR EACH -> Itera el arreglo
+
             notas.forEachIndexed { indice, nota: Int ->
                 println("Indice: $indice")
                 println("Nota: $nota")
 
             }
+
 
             // MAP -> Itera y modifica el arreglo
             // Impares +1
@@ -60,28 +64,48 @@ fun main (args: Array<String>){
                     nota+2
             }*/
 
-    val notasDos = notas.map{ nota ->
-        when(nota%2){
-            1 ->    {
-                nota+1
+            val notasDos = notas.map{ nota ->
+                when(nota%2){
+                    1 ->    {   nota+1
+                 }
+
+                    else -> {nota+2}
+                }
             }
-
-            else -> {nota+2}
-        }
-    }
-
 
             notasDos.forEach {
                 println("Notas 2: $it")
             }
 
+            val respuestaFilter = notas.filter {nota->
+                nota in 3..5
+            }.map {
+                it*2
+            }
 
+    notasDos.forEach {println("$it") }
 
+    val novias = arrayListOf<Int>(1,2,2,3,4,5)
 
+    val respuestaNovia = novias.any{
+        it == 3
+    }
 
-        }
+    println(respuestaNovia)
 
-            fun estaJalado(nota: Double){
+    val tazos = arrayListOf<Int>(1,2,3,4,5,6,7)
+    val respuestaTazos = tazos.all{
+        it == 1
+    }
+    println(respuestaTazos)
+
+    val totalTazos = tazos.reduce { valorAcumulado, tazo ->
+        valorAcumulado + tazo
+    }
+
+}
+
+fun estaJalado(nota: Double){
                 when (nota) {
                     7.0 -> {
                         println("Pasaste con las justas")
