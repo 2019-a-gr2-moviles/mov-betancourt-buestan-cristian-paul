@@ -103,8 +103,6 @@ fun main (args: Array<String>){
         valorAcumulado + tazo
     }
 
-
-
 }
 
 fun estaJalado(nota: Double){
