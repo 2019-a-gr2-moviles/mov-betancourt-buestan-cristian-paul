@@ -1,11 +1,11 @@
-fun main (args: Array<String>){
+fun main(args: Array<String>) {
 
     /*Comentario*/
     // Variables
 
     // Mutables
     var numero = 5
-    numero=6
+    numero = 6
 
     // Inmutables
     val nombre: String = "Cristian"
@@ -17,13 +17,13 @@ fun main (args: Array<String>){
     val hijos = null
 
     // Condicionales
-    if(nombre == "Cristian" ) {
+    if (nombre == "Cristian") {
         println("Verdadero")
-    }else{
+    } else {
         println("Falso")
     }
 
-    val tieneNombreYApellido = if (apellido!=null && nombre!=null) "ok" else "no"
+    val tieneNombreYApellido = if (apellido != null && nombre != null) "ok" else "no"
     println(tieneNombreYApellido)
 
     estaJalado(1.0)
@@ -37,12 +37,11 @@ fun main (args: Array<String>){
     val total = sumarDosNumeros(1, 2)
     println(total)
 
-    val arregloCumpleanos = Array<Int>(4, {1;2;3;4})
-    var arregloTodo: Array<Any?> = arrayOf("ds",321, null, false)
-    arregloCumpleanos.set(0,3)
+    val arregloCumpleanos = Array<Int>(4, { 1;2;3;4 })
+    var arregloTodo: Array<Any?> = arrayOf("ds", 321, null, false)
+    arregloCumpleanos.set(0, 3)
 
-    val notas = arrayListOf<Int>(1,2,3,4,5,6)
-
+    val notas = arrayListOf<Int>(1, 2, 3, 4, 5, 6, 11)
 
 
     // FOR EACH -> Itera el arreglo
@@ -53,6 +52,10 @@ fun main (args: Array<String>){
 
     }
 
+    //FIND
+    println("--------------------------------------")
+
+    println(notas.filterIndexed { index, i -> i==11  })
 
     // MAP -> Itera y modifica el arreglo
     // Impares +1
@@ -64,12 +67,15 @@ fun main (args: Array<String>){
             nota+2
     }*/
 
-    val notasDos = notas.map{ nota ->
-        when(nota%2){
-            1 ->    {   nota+1
+    /*val notasDos = notas.map { nota ->
+        when (nota % 2) {
+            1 -> {
+                nota + 1
             }
 
-            else -> {nota+2}
+            else -> {
+                nota + 2
+            }
         }
     }
 
@@ -77,24 +83,24 @@ fun main (args: Array<String>){
         println("Notas 2: $it")
     }
 
-    val respuestaFilter = notas.filter {nota->
+    val respuestaFilter = notas.filter { nota ->
         nota in 3..5
     }.map {
-        it*2
+        it * 2
     }
+    println("000000000000000000000000000000000000000000000000000000000000000000")
+   notasDos.forEach { println("$it") }
 
-    notasDos.forEach {println("$it") }
+    val novias = arrayListOf<Int>(1, 2, 2, 3, 4, 5)
 
-    val novias = arrayListOf<Int>(1,2,2,3,4,5)
-
-    val respuestaNovia = novias.any{
+    val respuestaNovia = novias.any {
         it == 3
     }
 
     println(respuestaNovia)
 
-    val tazos = arrayListOf<Int>(1,2,3,4,5,6,7)
-    val respuestaTazos = tazos.all{
+    val tazos = arrayListOf<Int>(1, 2, 3, 4, 5, 6, 7)
+    val respuestaTazos = tazos.all {
         it == 1
     }
     println(respuestaTazos)
@@ -102,19 +108,19 @@ fun main (args: Array<String>){
     val totalTazos = tazos.reduce { valorAcumulado, tazo ->
         valorAcumulado + tazo
     }
-
+*/
 }
 
-fun estaJalado(nota: Double){
+fun estaJalado(nota: Double) {
     when (nota) {
         7.0 -> {
             println("Pasaste con las justas")
         }
-        10.0-> {
+        10.0 -> {
             println("Felicitaciones")
 
         }
-        0.0-> {
+        0.0 -> {
             println("Vago")
 
         }
@@ -134,7 +140,7 @@ fun holaMundoAvanzado(mensaje: Any) {
     println("Mensaje: $mensaje")
 }
 
-fun sumarDosNumeros(numUno: Int, numDos: Int):Int{
+fun sumarDosNumeros(numUno: Int, numDos: Int): Int {
     return numUno + numDos
 }
 
