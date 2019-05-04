@@ -1,7 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="000f4266-3328-4254-b12c-b2b8acd6b610" name="Default Changelist" comment="" />
+    <list default="true" id="000f4266-3328-4254-b12c-b2b8acd6b610" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Catalogo/META-INF/Catalogo.kotlin_module" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Catalogo/META-INF/Catalogo.kotlin_module" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Catalogo/MainKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Catalogo/MainKt.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Catalogo/com/intellij/uiDesigner/core/AbstractLayout.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Catalogo/com/intellij/uiDesigner/core/DimensionInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Catalogo/com/intellij/uiDesigner/core/GridConstraints.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Catalogo/com/intellij/uiDesigner/core/GridLayoutManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Catalogo/com/intellij/uiDesigner/core/HorizontalInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Catalogo/com/intellij/uiDesigner/core/LayoutState.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Catalogo/com/intellij/uiDesigner/core/Spacer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Catalogo/com/intellij/uiDesigner/core/SupportCode$TextWithMnemonic.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Catalogo/com/intellij/uiDesigner/core/SupportCode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Catalogo/com/intellij/uiDesigner/core/Util.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Catalogo/com/intellij/uiDesigner/core/VerticalInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Catalogo/controlador/LeerEscribirArchivo$Companion.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Catalogo/controlador/LeerEscribirArchivo$Companion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Catalogo/controlador/LeerEscribirArchivo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Catalogo/controlador/LeerEscribirArchivo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Catalogo/controlador/ListaCompras$obtenerValorTotal$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Catalogo/controlador/ListaCompras$obtenerValorTotal$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Catalogo/controlador/ListaCompras$restaurarNumeroZapatos$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Catalogo/controlador/ListaCompras$restaurarNumeroZapatos$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Catalogo/controlador/ListaCompras.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Catalogo/controlador/ListaCompras.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Catalogo/controlador/ListaZapatos.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Catalogo/controlador/ListaZapatos.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Catalogo/modelo/Compra$toString$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Catalogo/modelo/Compra$toString$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Catalogo/modelo/Compra.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Catalogo/modelo/Compra.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Catalogo/modelo/Zapato.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Catalogo/modelo/Zapato.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Catalogo/vista/BuscarCompras$llenarTabla$$inlined$forEach$lambda$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Catalogo/vista/BuscarCompras$llenarTabla$$inlined$forEach$lambda$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Catalogo/vista/BuscarCompras.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Catalogo/vista/BuscarCompras.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Catalogo/vista/BuscarZapatos.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Catalogo/vista/BuscarZapatos.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Catalogo/vista/EliminarCompra$showEventDemo$$inlined$apply$lambda$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Catalogo/vista/EliminarCompra$showEventDemo$$inlined$apply$lambda$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Catalogo/vista/EliminarCompra.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Catalogo/vista/EliminarCompra.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Catalogo/vista/EliminarZapatos$showEventDemo$$inlined$apply$lambda$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Catalogo/vista/EliminarZapatos$showEventDemo$$inlined$apply$lambda$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Catalogo/vista/EliminarZapatos.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Catalogo/vista/EliminarZapatos.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Catalogo/vista/InsertarCompra$showEventDemo$$inlined$apply$lambda$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Catalogo/vista/InsertarCompra$showEventDemo$$inlined$apply$lambda$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Catalogo/vista/InsertarCompra$showEventDemo$$inlined$apply$lambda$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Catalogo/vista/InsertarCompra$showEventDemo$$inlined$apply$lambda$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Catalogo/vista/InsertarCompra.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Catalogo/vista/InsertarCompra.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Catalogo/vista/InsertarZapatos$showEventDemo$$inlined$apply$lambda$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Catalogo/vista/InsertarZapatos$showEventDemo$$inlined$apply$lambda$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Catalogo/vista/InsertarZapatos.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Catalogo/vista/InsertarZapatos.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Catalogo/vista/Menu$showEventDemo$$inlined$apply$lambda$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Catalogo/vista/Menu$showEventDemo$$inlined$apply$lambda$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Catalogo/vista/Menu$showEventDemo$$inlined$apply$lambda$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Catalogo/vista/Menu$showEventDemo$$inlined$apply$lambda$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Catalogo/vista/Menu$showEventDemo$$inlined$apply$lambda$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Catalogo/vista/Menu$showEventDemo$$inlined$apply$lambda$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Catalogo/vista/Menu$showEventDemo$$inlined$apply$lambda$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Catalogo/vista/Menu$showEventDemo$$inlined$apply$lambda$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Catalogo/vista/Menu$showEventDemo$$inlined$apply$lambda$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Catalogo/vista/Menu$showEventDemo$$inlined$apply$lambda$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Catalogo/vista/Menu$showEventDemo$$inlined$apply$lambda$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Catalogo/vista/Menu$showEventDemo$$inlined$apply$lambda$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Catalogo/vista/Menu$showEventDemo$$inlined$apply$lambda$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Catalogo/vista/Menu$showEventDemo$$inlined$apply$lambda$7.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Catalogo/vista/Menu$showEventDemo$$inlined$apply$lambda$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Catalogo/vista/Menu$showEventDemo$$inlined$apply$lambda$8.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Catalogo/vista/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Catalogo/vista/Menu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Catalogo/vista/ModificarCompra$showEventDemo$$inlined$apply$lambda$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Catalogo/vista/ModificarCompra$showEventDemo$$inlined$apply$lambda$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Catalogo/vista/ModificarCompra.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Catalogo/vista/ModificarCompra.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Catalogo/vista/ModificarZapatos$showEventDemo$$inlined$apply$lambda$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Catalogo/vista/ModificarZapatos$showEventDemo$$inlined$apply$lambda$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Catalogo/vista/ModificarZapatos.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Catalogo/vista/ModificarZapatos.class" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,11 +67,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/vista/Menu.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="741">
+            <state relative-caret-position="2128">
               <caret line="115" column="1" selection-start-line="115" selection-start-column="1" selection-end-line="115" selection-end-column="1" />
-              <folding>
-                <element signature="e#15#255#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -29,7 +76,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/vista/BuscarZapatos.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1000">
+            <state relative-caret-position="1083">
               <caret line="63" selection-start-line="63" selection-end-line="63" />
               <folding>
                 <element signature="e#15#215#0" expanded="true" />
@@ -41,8 +88,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/controlador/ListaCompras.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="83" column="43" selection-start-line="83" selection-start-column="43" selection-end-line="83" selection-end-column="43" />
+            <state relative-caret-position="304">
+              <caret line="89" column="22" selection-start-line="89" selection-start-column="22" selection-end-line="89" selection-end-column="22" />
               <folding>
                 <element signature="e#21#179#0" expanded="true" />
               </folding>
@@ -77,6 +124,9 @@
       <find>TablaIn</find>
       <find>TablaM</find>
     </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -113,59 +163,28 @@
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="1115" />
-    <option name="y" value="36" />
+    <option name="y" value="35" />
     <option name="width" value="1475" />
     <option name="height" value="1285" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="Catalogo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Catalogo" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Catalogo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Catalogo" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Catalogo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Catalogo" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="controlador" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Catalogo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Catalogo" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="modelo" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Catalogo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Catalogo" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="vista" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="Scope" />
+      <pane id="ProjectPane" />
       <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH" value="241" />
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="290" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../mov-betancourt-buestan-cristian-paul/01-kotlin" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -240,11 +259,12 @@
       <workItem from="1556744461922" duration="6926000" />
       <workItem from="1556751402644" duration="6401000" />
       <workItem from="1556915233280" duration="18352000" />
+      <workItem from="1556933998337" duration="235000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50636000" />
+    <option name="totallyTimeSpent" value="50871000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -258,7 +278,7 @@
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21677852" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21946308" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -459,17 +479,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/vista/Menu.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="741">
+        <state relative-caret-position="2128">
           <caret line="115" column="1" selection-start-line="115" selection-start-column="1" selection-end-line="115" selection-end-column="1" />
-          <folding>
-            <element signature="e#15#255#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/vista/BuscarZapatos.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1000">
+        <state relative-caret-position="1083">
           <caret line="63" selection-start-line="63" selection-end-line="63" />
           <folding>
             <element signature="e#15#215#0" expanded="true" />
@@ -479,8 +496,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/controlador/ListaCompras.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="83" column="43" selection-start-line="83" selection-start-column="43" selection-end-line="83" selection-end-column="43" />
+        <state relative-caret-position="304">
+          <caret line="89" column="22" selection-start-line="89" selection-start-column="22" selection-end-line="89" selection-end-column="22" />
           <folding>
             <element signature="e#21#179#0" expanded="true" />
           </folding>
