@@ -2,11 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="368edb7a-a3a2-4693-a51e-34a0632e43ad" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../02-kotlin/src/Main.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ejemplo/META-INF/ejemplo.kotlin_module" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ejemplo/META-INF/ejemplo.kotlin_module" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ejemplo/MainKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ejemplo/MainKt.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../02-kotlin/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../02-kotlin/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,8 +25,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Main.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="31" lean-forward="true" selection-end-column="31" />
+            <state relative-caret-position="75">
+              <caret line="102" column="36" selection-start-line="102" selection-start-column="36" selection-end-line="102" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -48,10 +50,10 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="y" value="23" />
-    <option name="width" value="2560" />
-    <option name="height" value="1337" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="y" value="20" />
+    <option name="width" value="1945" />
+    <option name="height" value="1105" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -59,6 +61,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -75,8 +79,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -141,17 +143,21 @@
       <option name="presentableId" value="Default" />
       <updated>1556072507308</updated>
       <workItem from="1556072514622" duration="432000" />
+      <workItem from="1556682583582" duration="3087000" />
+      <workItem from="1556751431939" duration="20000" />
+      <workItem from="1556751694164" duration="1530000" />
+      <workItem from="1556914944731" duration="881000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="432000" />
+    <option name="totallyTimeSpent" value="5950000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="2560" height="1337" extended-state="0" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.105661884" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.111409396" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -161,7 +167,7 @@
       <window_info id="Learn" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32707992" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32577905" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39967373" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -169,7 +175,7 @@
       <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49932885" weight="0.3286119" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50067115" side_tool="true" weight="0.3286119" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.32789558" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.32719547" />
       <window_info anchor="bottom" id="Database Changes" order="11" />
       <window_info anchor="bottom" id="Version Control" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -189,8 +195,8 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/Main.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="31" lean-forward="true" selection-end-column="31" />
+        <state relative-caret-position="75">
+          <caret line="102" column="36" selection-start-line="102" selection-start-column="36" selection-end-line="102" selection-end-column="36" />
         </state>
       </provider>
     </entry>
