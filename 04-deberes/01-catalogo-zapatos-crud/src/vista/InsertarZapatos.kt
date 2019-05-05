@@ -6,13 +6,6 @@ import javax.swing.*
 
 class InsertarZapatos(title: String, listaZapatos: ListaZapatos) : JFrame() {
     private val panel: JPanel = JPanel()
-    private val panel1: JPanel = JPanel()
-    private val panel2: JPanel = JPanel()
-    private val panel3: JPanel = JPanel()
-    private val panel4: JPanel = JPanel()
-    private val panel5: JPanel = JPanel()
-    private val panel6: JPanel = JPanel()
-    private val panel7: JPanel = JPanel()
     private val labelCodigo: JLabel = JLabel("Código")
     private val labelColor: JLabel = JLabel("Color")
     private val labelTalla: JLabel = JLabel("Talla")
@@ -22,69 +15,91 @@ class InsertarZapatos(title: String, listaZapatos: ListaZapatos) : JFrame() {
     private val labelPrecio: JLabel = JLabel("Precio")
     private val txtCodigo: JTextField = JTextField()
     private val txtColor: JTextField = JTextField()
-    private val txtMarca: JTextField = JTextField()
-    private val txtTipo: JTextField = JTextField()
-    private val txtTalla: JTextField = JTextField()
+    private val comboMarca: JComboBox<String> = JComboBox()
     private val txtCantidad: JTextField = JTextField()
     private val txtPrecio: JTextField = JTextField()
     private val boton: JButton = JButton("Ingresar Datos")
+    private val comboTipo = JComboBox<String>()
+    private val comboTalla = JComboBox<String>()
     private var listaZapatos: ListaZapatos
+    private val listaMarcas = arrayListOf("Adidas", "Puma", "Nike", "Reebook", "Umbro", "Lotto")
+    private val listaTipos = arrayListOf("Hombre", "Mujer")
+
 
     init {
         this.listaZapatos = listaZapatos
+
+        for (x in 30..42) {
+            comboTalla.addItem("$x")
+        }
         createUI(title)
     }
 
     private fun createUI(title: String) {
         setTitle(title)
-        val layout = GridLayout()
-        panel1.layout = layout
-        panel2.layout = layout
-        panel3.layout = layout
-        panel4.layout = layout
-        panel5.layout = layout
-        panel6.layout = layout
+        panel.layout = null
 
-        panel1.setSize(600, 95)
-        txtCodigo.setSize(400, 75)
+        labelCodigo.setBounds(5, 5, 150, 25)
+        txtCodigo.setBounds(160, 5, 150, 25)
 
-        panel1.add(labelCodigo)
-        panel1.add(txtCodigo)
+        labelColor.setBounds(5, 35, 150, 25)
+        txtColor.setBounds(160, 35, 150, 25)
 
-        panel2.add(labelColor)
-        panel2.add(txtColor)
+        labelMarca.setBounds(5, 65, 150, 25)
+        listaMarcas.forEach { marca ->
+            String
+            comboMarca.addItem(marca)
+        }
 
-        panel3.add(labelMarca)
-        panel3.add(txtMarca)
+        comboMarca.setBounds(160, 65, 150, 25)
 
-        panel4.add(labelTalla)
-        panel4.add(txtTalla)
+        labelTalla.setBounds(5, 95, 150, 25)
+        comboTalla.setBounds(160, 95, 150, 25)
 
-        panel5.add(labelTipo)
-        panel5.add(txtTipo)
+        labelTipo.setBounds(5, 125, 150, 25)
 
-        panel6.add(labelCantidad)
-        panel6.add(txtCantidad)
+        listaTipos.forEach { tipo: String ->
+            comboTipo.addItem(tipo)
+        }
 
-        panel7.add(labelPrecio)
-        panel7.add(txtPrecio)
+        comboTipo.setBounds(160, 125, 150, 25)
 
-        panel.layout
-        boton.setSize(100, 100)
+        labelCantidad.setBounds(5, 155, 150, 25)
+        txtCantidad.setBounds(160, 155, 150, 25)
 
-        panel.setSize(600, 200)
-        panel.add(panel1)
-        panel.add(panel2)
-        panel.add(panel3)
-        panel.add(panel4)
-        panel.add(panel5)
-        panel.add(panel6)
-        panel.add(panel7)
+        labelPrecio.setBounds(5, 185, 150, 25)
+        txtPrecio.setBounds(160, 185, 150, 25)
+
+        boton.setBounds(90, 240, 130, 30)
+
+
+        panel.layout = null
+        panel.add(labelCodigo)
+        panel.add(txtCodigo)
+
+        panel.add(txtColor)
+        panel.add(labelColor)
+
+        panel.add(labelMarca)
+        panel.add(comboMarca)
+
+        panel.add(labelCantidad)
+        panel.add(txtCantidad)
+
+        panel.add(labelPrecio)
+        panel.add(txtPrecio)
+
+        panel.add(labelTipo)
+        panel.add(comboTipo)
+
+        panel.add(labelTalla)
+        panel.add(comboTalla)
+
         panel.add(boton)
 
         this.add(panel)
         //defaultCloseOperation = JFrame.EXIT_ON_CLOSE
-        setSize(600, 175)
+        setSize(340, 325)
         setLocationRelativeTo(null)
     }
 
@@ -98,9 +113,9 @@ class InsertarZapatos(title: String, listaZapatos: ListaZapatos) : JFrame() {
                     if (!existe) {
 
                         val color = txtColor.text
-                        val talla = txtTalla.text
-                        val tipo = txtTipo.text
-                        val marca = txtMarca.text
+                        val talla = comboTalla.selectedItem.toString()
+                        val tipo = comboTipo.selectedItem.toString()
+                        val marca = comboMarca.selectedItem.toString()
                         val cantidad = txtCantidad.text
                         val precio = txtPrecio.text
 
@@ -109,7 +124,7 @@ class InsertarZapatos(title: String, listaZapatos: ListaZapatos) : JFrame() {
                         )
 
                         JOptionPane.showMessageDialog(null, "REGISTRO INGRESADO SATISFACTORIAMENTE")
-                        show(false)
+                        this.show(false)
                     } else {
                         JOptionPane.showMessageDialog(null, "CÓDIGO YA EXISTENTE")
                     }

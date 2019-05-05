@@ -24,7 +24,7 @@ class EliminarZapatos(title: String, listaZapatos: ListaZapatos) : JFrame() {
         panel.add(boton)
         this.add(panel)
         //defaultCloseOperation = JFrame.EXIT_ON_CLOSE
-        setSize(600, 175)
+        setSize(600, 100)
         setLocationRelativeTo(null)
     }
 
