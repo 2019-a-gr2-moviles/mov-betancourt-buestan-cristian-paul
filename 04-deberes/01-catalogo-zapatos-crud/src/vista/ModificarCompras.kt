@@ -2,28 +2,32 @@ package vista
 
 import controlador.ListaCompras
 import controlador.ListaZapatos
+import modelo.Compra
 import java.awt.GridLayout
 import javax.swing.*
 
-class ModificarCompra(title: String, listaCompras: ListaCompras, listaZapatos: ListaZapatos) : JFrame() {
+class ModificarCompras(title: String, listaCompras: ListaCompras, listaZapatos: ListaZapatos) : JFrame() {
     val panel: JPanel = JPanel()
     val boton: JButton = JButton("Buscar compra")
-    val txtNumeroCompra: JTextField = JTextField()
+    val comboNumeroCompra: JComboBox<String> = JComboBox()
     val listaZapatos: ListaZapatos
     val listaCompras: ListaCompras
 
     init {
         this.listaCompras = listaCompras
         this.listaZapatos = listaZapatos
+        listaCompras.obtenerCompras().forEach { compra: Compra ->
+            comboNumeroCompra.addItem("${compra.getNumeroCompra()}")
+        }
         createUI(title)
     }
 
     private fun createUI(title: String) {
         setTitle(title)
         panel.layout = GridLayout()
-        txtNumeroCompra.setSize(200, 100)
+        setSize(200, 100)
         boton.setSize(100, 100)
-        panel.add(txtNumeroCompra)
+        panel.add(comboNumeroCompra)
         panel.add(boton)
         this.add(panel)
         //defaultCloseOperation = JFrame.EXIT_ON_CLOSE
@@ -36,8 +40,8 @@ class ModificarCompra(title: String, listaCompras: ListaCompras, listaZapatos: L
         val botonBuscar = boton.apply {
             //ctionCommand = "Buscar"
             addActionListener {
-                if (txtNumeroCompra.text != "") {
-                    val numeroCompra = txtNumeroCompra.text.toInt()
+                if (comboNumeroCompra.selectedIndex > -1) {
+                    val numeroCompra = comboNumeroCompra.selectedItem.toString().toInt()
                     val existe = listaCompras.existe(numeroCompra)
                     if (existe) {
                         val confirmar = JOptionPane.showConfirmDialog(

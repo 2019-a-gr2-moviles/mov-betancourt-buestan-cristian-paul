@@ -27,7 +27,7 @@ class EliminarCompra(title: String, listaCompras: ListaCompras, listaZapatos: Li
         panel.add(boton)
         this.add(panel)
         //defaultCloseOperation = JFrame.EXIT_ON_CLOSE
-        setSize(600, 175)
+        setSize(600, 100)
         setLocationRelativeTo(null)
     }
 

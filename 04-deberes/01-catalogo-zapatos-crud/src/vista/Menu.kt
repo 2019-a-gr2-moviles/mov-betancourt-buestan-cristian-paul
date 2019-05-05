@@ -91,7 +91,7 @@ class Menu(title: String) : JFrame() {
 
         boton6.apply {
             addActionListener {
-                val frameModificarCompra = ModificarCompra("MODIFICAR COMPRA", listaCompras, listaZapatos)
+                val frameModificarCompra = ModificarCompras("MODIFICAR COMPRA", listaCompras, listaZapatos)
                 frameModificarCompra.showEventDemo()
                 frameModificarCompra.show()
             }

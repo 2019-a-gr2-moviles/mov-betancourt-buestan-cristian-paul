@@ -2,20 +2,16 @@ package vista
 
 import controlador.ListaCompras
 import controlador.ListaZapatos
-import java.awt.GridLayout
 import java.util.*
 import javax.swing.*
 
 class InsertarCompra(title: String, listaCompras: ListaCompras, listaZapatos: ListaZapatos) : JFrame() {
     private val panel: JPanel = JPanel()
-    private val panel1: JPanel = JPanel()
-    private val panel2: JPanel = JPanel()
-    private val panel3: JPanel = JPanel()
-    private val panel4: JPanel = JPanel()
+
 
     private val labelNombre: JLabel = JLabel("Nombre ")
     private val labelApellido: JLabel = JLabel("Apellido ")
-    private val labelCedula: JLabel = JLabel("Cedula ")
+    private val labelCedula: JLabel = JLabel("Cédula ")
     private val txtNombre: JTextField = JTextField()
     private val txtApellido: JTextField = JTextField()
     private val txtCedula: JTextField = JTextField()
@@ -32,36 +28,36 @@ class InsertarCompra(title: String, listaCompras: ListaCompras, listaZapatos: Li
 
     private fun createUI(title: String) {
         setTitle(title)
-        val layout = GridLayout()
-        panel1.layout = layout
-        panel2.layout = layout
-        panel3.layout = layout
-        panel4.layout = layout
-        panel1.setSize(600, 95)
 
-        panel1.add(labelNombre)
-        panel1.add(txtNombre)
+        labelNombre.setBounds(5, 5, 150, 25)
+        txtNombre.setBounds(160, 5, 150, 25)
 
-        panel2.add(labelApellido)
-        panel2.add(txtApellido)
+        labelApellido.setBounds(5, 35, 150, 25)
+        txtApellido.setBounds(160, 35, 150, 25)
 
-        panel3.add(labelCedula)
-        panel3.add(txtCedula)
+        labelCedula.setBounds(5, 65, 150, 25)
+        txtCedula.setBounds(160, 65, 150, 25)
 
-        panel4.add(botonAgregarZapato)
-        panel4.add(botonComprar)
+        botonAgregarZapato.setBounds(5, 105, 150, 25)
+        botonComprar.setBounds(160, 105, 150, 25)
 
-        panel.layout
+        panel.layout = null
 
-        panel.setSize(600, 200)
-        panel.add(panel1)
-        panel.add(panel2)
-        panel.add(panel3)
-        panel.add(panel4)
+        panel.add(labelNombre)
+        panel.add(txtNombre)
+
+        panel.add(labelApellido)
+        panel.add(txtApellido)
+
+        panel.add(labelCedula)
+        panel.add(txtCedula)
+
+        panel.add(botonComprar)
+        panel.add(botonAgregarZapato)
 
         this.add(panel)
         //defaultCloseOperation = JFrame.EXIT_ON_CLOSE
-        setSize(600, 175)
+        setSize(340, 175)
         setLocationRelativeTo(null)
     }
 
