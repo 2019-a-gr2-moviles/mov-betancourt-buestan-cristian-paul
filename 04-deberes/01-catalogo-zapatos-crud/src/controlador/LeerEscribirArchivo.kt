@@ -2,19 +2,13 @@ package controlador
 
 import modelo.Compra
 import modelo.Zapato
-import java.io.IOException
-import java.io.FileNotFoundException
-import java.io.FileInputStream
-import java.io.ObjectInputStream
-import java.io.FileOutputStream
-import java.io.ObjectOutputStream
-import java.io.Serializable
+import java.io.*
 
 
 class LeerEscribirArchivo {
 
     companion object {
-        private var rutaArchivo: String = ""
+        private var rutaArchivo: String = "src${File.separatorChar}archivos${File.separatorChar}"
         private var nombreArchivoZapatos: String = "listaZapatos.zp"
         private var nombreArchivoCompras: String = "listaCompras.zp"
 
