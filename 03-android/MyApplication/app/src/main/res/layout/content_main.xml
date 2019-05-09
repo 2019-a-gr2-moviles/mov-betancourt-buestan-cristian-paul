@@ -11,7 +11,7 @@
 
     <TextView
             android:layout_width="wrap_content"
-            android:layout_height="13dp"
+            android:layout_height="11dp"
             android:text="@string/hola_mundo"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
