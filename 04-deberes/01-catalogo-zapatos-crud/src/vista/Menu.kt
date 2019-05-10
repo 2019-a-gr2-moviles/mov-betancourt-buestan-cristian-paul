@@ -48,7 +48,7 @@ class Menu(title: String) : JFrame() {
 
         this.add(panel)
         defaultCloseOperation = JFrame.EXIT_ON_CLOSE
-        setSize(600, 115)
+        setSize(700, 115)
         setLocationRelativeTo(null)
     }
 

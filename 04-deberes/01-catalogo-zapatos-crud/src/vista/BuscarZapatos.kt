@@ -11,7 +11,7 @@ import javax.swing.table.DefaultTableModel
 class BuscarZapatos(title: String, listaZapatos: ListaZapatos) : JFrame() {
     val panel: JPanel = JPanel()
     val tabla: JTable = JTable()
-    val listaZapatos: ListaZapatos
+    var listaZapatos: ListaZapatos
 
     init {
         this.listaZapatos = listaZapatos
