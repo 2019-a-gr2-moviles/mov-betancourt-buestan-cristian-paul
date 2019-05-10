@@ -29,7 +29,7 @@ class BuscarCompras(title: String, listaCompras: ListaCompras, listaZapatos: Lis
         panel.add(tabla)
         this.add(panel)
         //defaultCloseOperation = JFrame.EXIT_ON_CLOSE
-        setSize(600, 300)
+        setSize(1100, 300)
         setLocationRelativeTo(null)
     }
 
