@@ -79,14 +79,14 @@ class ListaCompras : Serializable {
                 }
             }
         }
-        var numeroCompra = 1
+        var numeroCompra = 0
         listaCompras.forEach { compra: Compra ->
             if (compra.getNumeroCompra() >= numeroCompra) numeroCompra = compra.getNumeroCompra()
         }
 
         listaCompras.add(
             Compra(
-                numeroCompra,
+                numeroCompra+1,
                 fecha,
                 nombre,
                 apellido,
@@ -129,6 +129,7 @@ class ListaCompras : Serializable {
         val aBorrar = listaCompras.filter { compra: Compra ->
             compra.getNumeroCompra() == numeroCompra
         }
+        print("--------------\n\n\n${aBorrar.size}")
 
         aBorrar.get(0).getListaCodigosZapatos().forEach { codigo: String, cantidad: Int ->
             listaZapatos.map { zapato: Zapato ->

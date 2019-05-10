@@ -12,6 +12,17 @@ import javax.swing.table.DefaultTableModel
 class BuscarCompras(title: String, listaCompras: ListaCompras, listaZapatos: ListaZapatos) : JFrame() {
     val panel: JPanel = JPanel()
     val tabla: JTable = JTable()
+    val columnas = arrayOf<String>(
+        "NUMERO COMPRA",
+        "FECHA",
+        "CODIGO ZAPATO",
+        "CEDULA",
+        "NOMBRE",
+        "APELLIDO",
+        "CANTIDAD",
+        "PRECIO",
+        "VALIDEZ"
+    )
     val listaZapatos: ListaZapatos
     val listaCompras: ListaCompras
 

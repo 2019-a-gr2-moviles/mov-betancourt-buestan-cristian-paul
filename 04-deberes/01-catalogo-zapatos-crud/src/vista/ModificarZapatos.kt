@@ -67,7 +67,7 @@ class ModificarZapatos(title: String, listaZapatos: ListaZapatos) : JFrame() {
                                     "${comboTalla.getItemAt((comboTalla.itemCount - 1))}"
                         )
                         var mensajeTipo = "Ingrese el tipo: "
-                        listaMarcas.forEach { s: String ->
+                        listaTipos.forEach { s: String ->
                             mensajeTipo += (", $s")
                         }
 
