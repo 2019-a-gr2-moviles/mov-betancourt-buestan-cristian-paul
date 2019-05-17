@@ -24,7 +24,6 @@ class MainActivity : AppCompatActivity() {
         }
 
         btn_actividad_dos.setOnClickListener {
-
             irActividadDos()
         }
 
@@ -35,6 +34,9 @@ class MainActivity : AppCompatActivity() {
         val intent = Intent(
             this, Actividad2::class.java
         )
+        //intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+        intent.putExtra("nombre", "Cristian")
+        intent.putExtra("edad", 21)
         startActivity(intent)
     }
 
