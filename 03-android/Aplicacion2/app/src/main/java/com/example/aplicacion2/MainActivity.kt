@@ -27,6 +27,9 @@ class MainActivity : AppCompatActivity() {
             irParcelable()
         }
 
+        btn_adapter.setOnClickListener {
+            irListView()
+        }
 
     }
 
@@ -57,6 +60,16 @@ class MainActivity : AppCompatActivity() {
 
         intentExplicito.putExtra("usuario", cristian)
         intentExplicito.putExtra("mascota", firulais)
+        startActivity(intentExplicito)
+    }
+
+    fun irListView() {
+        //intent explícito
+        val intentExplicito = Intent(
+            this,
+            ListViewActivity::class.java
+        )
+
         startActivity(intentExplicito)
     }
 }
