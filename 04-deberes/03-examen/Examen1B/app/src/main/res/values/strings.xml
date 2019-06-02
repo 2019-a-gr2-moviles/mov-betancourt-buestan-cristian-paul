@@ -2,24 +2,24 @@
     <string name="app_name" translatable="false">Examen1B</string>
     <string name="title_activity_pacientes" translatable="false">Pacientes</string>
     <string name="title_activity_gestion" translatable="false">Gestión de pacientes</string>
-    <string name="txt_usuario">Nombre</string>
-    <string name="btn_entrar">Entrar</string>
-    <string name="btn_ges_pac">Gestionar pacientes</string>
-    <string name="btn_crear_pac">Crear paciente</string>
-    <string name="txt_nom_pac">Nombres</string>
-    <string name="txt_ape_pac">Apellidos</string>
-    <string name="fec_nac_pac">Fecha de nacimiento</string>
-    <string name="hijos_pac">Numero de hijos</string>
-    <string name="seguro_pac">Seguro</string>
-    <string name="btn_insertar">Crear</string>
-    <string name="btn_eliminar">Eliminar</string>
-    <string name="btn_actualizar">Actualizar</string>
-    <string name="btn_ges_med">Gestionar medicamento</string>
-    <string name="btn_crear_med">Crear medicamento</string>
-    <string name="txt_nom_med">Nombre</string>
-    <string name="txt_comp_med">Composicion</string>
-    <string name="txt_uso_med">Usado para</string>
-    <string name="fec_cad_med">Fecha de caducidad</string>
-    <string name="txt_num_pas_med">Numero de pastillas</string>
-    <string name="txt_gra_med">Gramos a ingerir</string>
+    <string name="txt_usuario" translatable="false">Nombre</string>
+    <string name="btn_entrar" translatable="false">Entrar</string>
+    <string name="btn_ges_pac" translatable="false">Gestionar pacientes</string>
+    <string name="btn_crear_pac" translatable="false">Crear paciente</string>
+    <string name="txt_nom_pac" translatable="false">Nombres</string>
+    <string name="txt_ape_pac" translatable="false">Apellidos</string>
+    <string name="fec_nac_pac" translatable="false">Fecha de nacimiento</string>
+    <string name="hijos_pac" translatable="false">Numero de hijos</string>
+    <string name="seguro_pac" translatable="false">Seguro</string>
+    <string name="btn_insertar" translatable="false">Crear</string>
+    <string name="btn_eliminar" translatable="false">Eliminar</string>
+    <string name="btn_actualizar" translatable="false">Actualizar</string>
+    <string name="btn_ges_med" translatable="false">Gestionar medicamento</string>
+    <string name="btn_crear_med" translatable="false">Crear medicamento</string>
+    <string name="txt_nom_med" translatable="false">Nombre</string>
+    <string name="txt_comp_med" translatable="false">Composicion</string>
+    <string name="txt_uso_med" translatable="false">Usado para</string>
+    <string name="fec_cad_med" translatable="false">Fecha de caducidad</string>
+    <string name="txt_num_pas_med" translatable="false">Numero de pastillas</string>
+    <string name="txt_gra_med" translatable="false">Gramos a ingerir</string>
 </resources>
