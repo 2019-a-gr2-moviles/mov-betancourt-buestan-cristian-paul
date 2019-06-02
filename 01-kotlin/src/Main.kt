@@ -1,5 +1,7 @@
-fun main(args: Array<String>) {
+import java.text.SimpleDateFormat
 
+fun main(args: Array<String>) {
+    println(SimpleDateFormat("dd/mm/yyyy").parse("09/03/2019").toString())
     /*Comentario*/
     // Variables
 
@@ -55,7 +57,7 @@ fun main(args: Array<String>) {
     //FIND
     println("--------------------------------------")
 
-    println(notas.filterIndexed { index, i -> i==11  })
+    println(notas.filterIndexed { index, i -> i == 11 })
 
     // MAP -> Itera y modifica el arreglo
     // Impares +1
