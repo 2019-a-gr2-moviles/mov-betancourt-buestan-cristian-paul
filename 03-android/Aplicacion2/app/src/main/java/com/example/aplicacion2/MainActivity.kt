@@ -31,6 +31,9 @@ class MainActivity : AppCompatActivity() {
             irListView()
         }
 
+        btn_rv.setOnClickListener {
+            irRecyclerView()
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -72,4 +75,15 @@ class MainActivity : AppCompatActivity() {
 
         startActivity(intentExplicito)
     }
+
+    fun irRecyclerView() {
+        val intent = Intent(
+            this,
+            ReciclerViewActivity::class.java
+        )
+
+        startActivity(intent)
+    }
+
 }
+
