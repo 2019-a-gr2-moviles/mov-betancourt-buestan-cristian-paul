@@ -29,7 +29,7 @@ class ListViewActivity : AppCompatActivity() {
             Log.i("list-view","Posicion $position")
             //mostrarSnack(view,"Posicion $position")
             Snackbar
-                .make(view, "Nombre: ${listaNombres[position]}r", Snackbar.LENGTH_LONG)
+                .make(view, "Nombre: ${listaNombres[position]}", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show()
         }
     }
