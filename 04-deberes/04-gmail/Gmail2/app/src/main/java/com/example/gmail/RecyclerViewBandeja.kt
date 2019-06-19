@@ -5,15 +5,17 @@ import android.os.Bundle
 import android.support.v7.widget.DefaultItemAnimator
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
-import kotlinx.android.synthetic.main.activity_bandeja_entrada.*
+import android.util.Log
+import android.widget.AdapterView
+import kotlinx.android.synthetic.main.activity_recycler_view_bandeja.*
 
-class BandejaEntrada : AppCompatActivity() {
+class RecyclerViewBandeja : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_bandeja_entrada)
+        setContentView(R.layout.activity_recycler_view_bandeja)
 
-        val recyclerView = rv_bandeja
+        val recyclerView = rv_bandeja_entrada
         val actividad = this
         val lista = arrayListOf<Mensaje>()
 
@@ -32,14 +34,16 @@ class BandejaEntrada : AppCompatActivity() {
             )
         )
         iniciarRecyclerView(lista, actividad, recyclerView)
+
     }
 
-    fun iniciarRecyclerView(lista: ArrayList<Mensaje>, actividad: BandejaEntrada, recyclerView: RecyclerView) {
+    fun iniciarRecyclerView(lista: ArrayList<Mensaje>, actividad: RecyclerViewBandeja, recyclerView: RecyclerView) {
         val adaptadorPersona = AdaptadorMensaje(lista, actividad, recyclerView)
-        rv_bandeja.adapter = adaptadorPersona
-        rv_bandeja.itemAnimator = DefaultItemAnimator()
-        rv_bandeja.layoutManager = LinearLayoutManager(actividad)
+        rv_bandeja_entrada.adapter = adaptadorPersona
+        rv_bandeja_entrada.itemAnimator = DefaultItemAnimator()
+        rv_bandeja_entrada.layoutManager = LinearLayoutManager(actividad)
 
         adaptadorPersona.notifyDataSetChanged()
     }
 }
+

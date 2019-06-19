@@ -1,6 +1,6 @@
 package com.example.gmail
 
-class Mensaje{
+class Mensaje {
 
     var remitente: String = ""
     var asunto: String = ""
@@ -11,6 +11,6 @@ class Mensaje{
         this.remitente = remitente
         this.asunto = asunto
         this.contenido = contenido
-        this.incial = remitente.substring(0,1).toUpperCase()
+        this.incial = remitente.substring(0, 1).toUpperCase()
     }
 }

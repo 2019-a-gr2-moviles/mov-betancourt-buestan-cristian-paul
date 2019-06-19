@@ -3,7 +3,6 @@ package com.example.gmail
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -20,9 +19,8 @@ class MainActivity : AppCompatActivity() {
     fun irBandejaEntrada() {
         val intent = Intent(
             this,
-            BandejaEntrada::class.java
+            RecyclerViewBandeja::class.java
         )
-        Log.i("nnn","click")
         startActivity(intent)
     }
 
