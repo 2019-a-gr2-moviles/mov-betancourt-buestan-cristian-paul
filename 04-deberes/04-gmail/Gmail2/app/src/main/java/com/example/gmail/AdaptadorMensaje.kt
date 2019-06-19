@@ -9,7 +9,7 @@ import android.widget.TextView
 
 class AdaptadorMensaje(
     private val listaMensajes: List<Mensaje>,
-    private val contexto: BandejaEntrada,
+    private val contexto: RecyclerViewBandeja,
     private val recyclerView: RecyclerView
 ) :
     RecyclerView.Adapter<AdaptadorMensaje.MyViewHolder>() {
@@ -25,9 +25,6 @@ class AdaptadorMensaje(
             asuntoTextView = view.findViewById(R.id.txt_asunto) as TextView
             contenidoTextView = view.findViewById(R.id.txt_contenido) as TextView
 
-            recyclerView.setOnClickListener {
-                Log.i("asdf", "click en recycler view")
-            }
         }
     }
 
@@ -50,9 +47,8 @@ class AdaptadorMensaje(
         val mensaje = listaMensajes[position]
         myViewHolder.remitenteTextView.text = mensaje.remitente
         myViewHolder.asuntoTextView.text = mensaje.asunto
-        myViewHolder.contenidoTextView.text = mensaje.contenido
+        myViewHolder.contenidoTextView.text = mensaje.contenido.substring(0, 20) + "..."
+        myViewHolder.inicialTextView.text = mensaje.incial
 
     }
-
-
 }
