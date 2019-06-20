@@ -107,4 +107,5 @@ module.exports = {
 // http://localhost:1337/usuario?sort=nombre ASC
 
 // 6) Traer los registros que contengan en el nombre la letra A
-// http://localhost:1337/usuario?where={"nombre": {"contains: "a"}}
+// http://localhost:1337/usuario?where={"nombre":{"contains":"a"}}
+// http://localhost:1337/usuario?where={"sueldo":{"<=":"a"}}
