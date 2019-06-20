@@ -1,5 +1,6 @@
 package com.example.gmail
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.DefaultItemAnimator
@@ -33,7 +34,31 @@ class RecyclerViewBandeja : AppCompatActivity() {
                 "Ingrese al siguiente link para descargar su factura: \nwww.misfacturas.com"
             )
         )
-        iniciarRecyclerView(lista, actividad, recyclerView)
+        lista.add(
+            Mensaje(
+                "Roberto",
+                "Solicitud de amistad",
+                "Roberto ha solicitado ser tu amigo en hi5."
+            )
+        )
+        lista.add(
+            Mensaje(
+                "Paul",
+                "Matriculas abiertas",
+                "Te invitamos a formar parte de nuestro curso de verano. Ingresa al link para que puedas llenar un formulario y registrarte."
+            )
+        )
+        lista.add(
+            Mensaje(
+                "Ignacio",
+                "Pago de tarjeta",
+                "Estimado Cristian.\n" +
+                        "Usted registra una deuda pendiente acreditada a la tarjeta 213XXXXXXX12."
+            )
+        )
+        iniciarRecyclerView(
+            lista, actividad, recyclerView
+        )
 
     }
 
@@ -44,6 +69,15 @@ class RecyclerViewBandeja : AppCompatActivity() {
         rv_bandeja_entrada.layoutManager = LinearLayoutManager(actividad)
 
         adaptadorPersona.notifyDataSetChanged()
+    }
+
+    fun irCorreo(mensaje: Mensaje) {
+        val intent = Intent(
+            this,
+            Correo::class.java
+        )
+        intent.putExtra("mensaje", mensaje)
+        startActivity(intent)
     }
 }
 

@@ -7,4 +7,40 @@
         android:layout_height="match_parent"
         tools:context=".Correo">
 
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="415dp"
+            android:layout_height="749dp" tools:layout_editor_absoluteY="-3dp"
+            tools:layout_editor_absoluteX="-6dp">
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:textStyle="bold"
+                android:textAllCaps="false" android:textAlignment="viewStart" android:textSize="20sp"/>
+        <TextView
+                android:text="TextView"
+                android:layout_width="match_parent"
+                android:layout_height="71dp" android:id="@+id/lbl_remitente" android:textStyle="bold"
+                android:textAllCaps="false" android:textAlignment="gravity" android:textSize="20sp"
+                android:textColor="#9409020C"/>
+        <TextView
+                android:text="TextView"
+                android:layout_width="match_parent"
+                android:layout_height="70dp" android:id="@+id/lbl_destinatario" android:textColor="#9409020C"
+                android:textSize="20sp" android:textStyle="bold" android:lineSpacingExtra="12sp"/>
+        <TextView
+                android:text="TextView"
+                android:layout_width="match_parent"
+                android:layout_height="80dp" android:id="@+id/lbl_asunto" android:textColor="#9409020C"
+                android:textSize="20sp" android:lineSpacingExtra="12sp" android:textStyle="bold"/>
+        <TextView
+                android:text=" CONTENIDO: "
+                android:layout_width="match_parent"
+                android:layout_height="80dp" android:textColor="#9409020C"
+                android:textSize="20sp" android:lineSpacingExtra="12sp" android:textStyle="bold"/>
+        <TextView
+                android:text="TextView"
+                android:layout_width="match_parent"
+                android:layout_height="410dp" android:id="@+id/lbl_contenido" android:textSize="20sp"
+                android:lineSpacingExtra="12sp"/>
+    </LinearLayout>
 </android.support.constraint.ConstraintLayout>
