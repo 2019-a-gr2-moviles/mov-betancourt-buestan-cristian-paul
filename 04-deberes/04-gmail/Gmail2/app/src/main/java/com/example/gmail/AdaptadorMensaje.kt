@@ -1,5 +1,6 @@
 package com.example.gmail
 
+import android.graphics.Color
 import android.support.v7.widget.RecyclerView
 import android.util.Log
 import android.view.LayoutInflater
@@ -31,8 +32,14 @@ class AdaptadorMensaje(
                 val mensaje: Mensaje =
                     listaMensajes.find { msg -> msg.remitente == remitenteTextView.text.toString() } as Mensaje
                 contexto.irCorreo(mensaje)
+                remitenteTextView.setTextColor(Color.parseColor("#E4636363"))
+                inicialTextView.setTextColor(Color.parseColor("#E4636363"))
+                asuntoTextView.setTextColor(Color.parseColor("#E4636363"))
+                contenidoTextView.setTextColor(Color.parseColor("#E4636363"))
+                inicialTextView.setTextColor(Color.parseColor("#FFFFFFFF"))
                 Log.i("recycler-view", mensaje.contenido)
             }
+
         }
     }
 

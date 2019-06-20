@@ -14,7 +14,7 @@
                 android:layout_width="156dp"
                 android:layout_height="match_parent" android:id="@+id/txt_inicial" android:layout_weight="1"
                 android:textSize="40sp" android:textStyle="bold" android:textAlignment="center"
-                android:background="#6AB8B8B8"/>
+                android:background="#6AB8B8B8" android:textColor="#E4636363"/>
         <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="match_parent"
@@ -23,15 +23,17 @@
                     android:text="TextView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" android:id="@+id/txt_remitente" android:textStyle="bold"
-                    android:textSize="20sp"/>
+                    android:textSize="20sp" android:textColor="#000000"/>
             <TextView
                     android:text="TextView"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/txt_asunto" android:textSize="17sp"/>
+                    android:layout_height="wrap_content" android:id="@+id/txt_asunto" android:textSize="17sp"
+                    android:textColor="#000000"/>
             <TextView
                     android:text="TextView"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/txt_contenido" android:textSize="15sp"/>
+                    android:layout_height="wrap_content" android:id="@+id/txt_contenido" android:textSize="15sp"
+                    android:textColor="#000000"/>
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>
