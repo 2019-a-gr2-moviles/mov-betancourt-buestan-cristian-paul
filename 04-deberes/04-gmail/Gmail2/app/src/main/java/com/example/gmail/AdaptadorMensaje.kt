@@ -5,6 +5,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
 import android.widget.TextView
 
 class AdaptadorMensaje(
@@ -25,6 +26,13 @@ class AdaptadorMensaje(
             asuntoTextView = view.findViewById(R.id.txt_asunto) as TextView
             contenidoTextView = view.findViewById(R.id.txt_contenido) as TextView
 
+            val layout = view.findViewById(R.id.linear_layout) as LinearLayout
+            layout.setOnClickListener {
+                val mensaje: Mensaje =
+                    listaMensajes.find { msg -> msg.remitente == remitenteTextView.text.toString() } as Mensaje
+                contexto.irCorreo(mensaje)
+                Log.i("recycler-view", mensaje.contenido)
+            }
         }
     }
 
@@ -48,7 +56,7 @@ class AdaptadorMensaje(
         myViewHolder.remitenteTextView.text = mensaje.remitente
         myViewHolder.asuntoTextView.text = mensaje.asunto
         myViewHolder.contenidoTextView.text = mensaje.contenido.substring(0, 20) + "..."
-        myViewHolder.inicialTextView.text = mensaje.incial
+        myViewHolder.inicialTextView.text = mensaje.remitente.substring(0, 1)
 
     }
 }
