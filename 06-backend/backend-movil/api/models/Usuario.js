@@ -55,6 +55,16 @@ module.exports = {
     correo: {
       type: 'string',
       isEmail: true
+    },
+
+    // CONFIGURACIÓN DEL PADRE
+    serviciosDeUsuario: {     // Nombre atributo de la relación
+      collection: 'servicio', // Nombre del modelo a relacionar
+      via: 'idUsuario'        // Nombre del campo a hacer la relacion
+    },
+    
+    idEmpresa: {
+      model: 'empresa'
     }
   },
 
