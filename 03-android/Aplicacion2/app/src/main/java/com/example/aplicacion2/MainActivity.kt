@@ -38,6 +38,10 @@ class MainActivity : AppCompatActivity() {
         btn_intent_respuesta.setOnClickListener {
             irIntentRespuesta()
         }
+
+        btn_http.setOnClickListener {
+            irIntentHTTP()
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -95,6 +99,14 @@ class MainActivity : AppCompatActivity() {
             IntentRespuestaActivity::class.java
         )
 
+        startActivity(intent)
+    }
+
+    fun irIntentHTTP() {
+        val intent = Intent(
+            this,
+            ConexionHttpActivity::class.java
+        )
         startActivity(intent)
     }
 
