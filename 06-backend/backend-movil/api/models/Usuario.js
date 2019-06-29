@@ -39,8 +39,7 @@ module.exports = {
       defaultsTo: 100.00
     },
     estaCasado: {
-      type: 'boolean',
-      defaultsTo: false
+      
     },
     latitudCasa: {
       type: 'string'
