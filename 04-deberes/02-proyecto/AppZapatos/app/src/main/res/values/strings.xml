@@ -1,3 +1,11 @@
 <resources>
-    <string name="app_name">AppZapatos</string>
+    <string name="app_name">CATÁLOGO DE ZAPATOS</string>
+    <string name="txt_zapato">ZAPATOS</string>
+    <string name="txt_cliente">CLIENTES</string>
+    <string name="txt_compra">COMPRAS</string>
+    <string name="insertar">INGRESAR</string>
+    <string name="ver">VER</string>
+    <string name="modificarEliminar">MODIFICAR O ELIMINAR</string>
+    <string name="title_activity_menu_clientes">MENU CLIENTES</string>
+    <string name="title_activity_menu_zapatos">MENU ZAPATOS</string>
 </resources>
