@@ -17,7 +17,7 @@ module.exports = {
       min: 0,
       required:true
     },
-    cantidad: {
+    total: {
       type: 'number',
       min: 0,
       required:true

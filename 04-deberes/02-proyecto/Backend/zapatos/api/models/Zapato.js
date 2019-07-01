@@ -33,18 +33,18 @@ module.exports = {
       maxLength: 6,
     },
     cantidad: {
-        type: 'number',
-        required: true,
-        min: 0,
-      },
-      cantidad: {
-        type: 'number',
-        required: true,
-        min: 0,
-      },
-      compraDeZapato: {     // Nombre atributo de la relación
-        collection: 'compra', // Nombre del modelo a relacionar
-        via: 'codigoZap'        // Nombre del campo a hacer la relacion
-      },
+      type: 'number',
+      required: true,
+      min: 0,
     },
-  }
+    precio: {
+      type: 'number',
+      required: true,
+      min: 0,
+    },
+    compraDeZapato: {     // Nombre atributo de la relación
+      collection: 'compra', // Nombre del modelo a relacionar
+      via: 'codigoZap'        // Nombre del campo a hacer la relacion
+    },
+  },
+}

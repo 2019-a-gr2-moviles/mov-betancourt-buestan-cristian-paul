@@ -8,4 +8,8 @@
     <string name="modificarEliminar">MODIFICAR O ELIMINAR</string>
     <string name="title_activity_menu_clientes">MENU CLIENTES</string>
     <string name="title_activity_menu_zapatos">MENU ZAPATOS</string>
+    <string name="nombre_cliente">Nombre</string>
+    <string name="apellido_cliente">Apellido</string>
+    <string name="cedula_cliente">Cedula</string>
+    <string name="btn_eliminar">Eliminar</string>
 </resources>
