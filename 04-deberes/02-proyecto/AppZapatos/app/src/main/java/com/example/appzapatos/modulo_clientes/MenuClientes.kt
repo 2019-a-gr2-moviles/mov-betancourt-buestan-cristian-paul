@@ -14,6 +14,14 @@ class MenuClientes : AppCompatActivity() {
         btn_ver_cli.setOnClickListener {
             irListaClientes()
         }
+
+        btn_ing_cli.setOnClickListener {
+            irCrearCliente()
+        }
+
+        btn_mod_cli.setOnClickListener {
+            irActualizarCliente()
+        }
     }
 
     fun irListaClientes(){
@@ -23,6 +31,23 @@ class MenuClientes : AppCompatActivity() {
         )
         startActivity(intent)
     }
+
+    fun irCrearCliente(){
+        intent = Intent(
+            this,
+            CrearCliente::class.java
+        )
+        startActivity(intent)
+    }
+
+    fun irActualizarCliente(){
+        intent = Intent(
+            this,
+            ActualizarCliente::class.java
+        )
+        startActivity(intent)
+    }
+
 
 
 }

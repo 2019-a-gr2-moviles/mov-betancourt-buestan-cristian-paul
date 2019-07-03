@@ -11,6 +11,7 @@ import android.widget.TextView
 import com.example.appzapatos.R
 import com.example.appzapatos.modulo_clientes.Cliente
 import com.example.appzapatos.modulo_clientes.ListaClientes
+import kotlinx.android.synthetic.main.activity_crear_cliente.*
 
 class AdaptadorListaClientes(
     private val listaClientes: ArrayList<Cliente>,
@@ -23,27 +24,36 @@ class AdaptadorListaClientes(
         var nombreTextView: TextView
         var apellidoTextView: TextView
         var cedulaTextView: TextView
+        var idTextView: TextView
         var eliminarBoton: Button
 
         init {
             nombreTextView = view.findViewById(R.id.txt_nom_cli) as TextView
             apellidoTextView = view.findViewById(R.id.txt_ape_cli) as TextView
             cedulaTextView = view.findViewById(R.id.txt_ced_cli) as TextView
+            idTextView = view.findViewById(R.id.txt_id_cli) as TextView
             eliminarBoton = view.findViewById(R.id.btn_eli_cli) as Button
 
-            val layout = view.findViewById(R.id.linear_layout) as LinearLayout
+            val layout = view.findViewById(R.id.lay_cam_cli) as LinearLayout
             layout.setOnClickListener {
-                Log.i("recycler-view", "Layout presionado")
+                val cliente = crearCliente(
+                    idTextView.text.toString().toInt(),
+                    nombreTextView.text.toString(),
+                    apellidoTextView.text.toString(),
+                    cedulaTextView.text.toString()
+                )
+                contexto.irActulizarCliente(cliente)
+
             }
 
             eliminarBoton.setOnClickListener {
-//                nombreTextView.text = "Me cambiaroooon!"
-//                contexto.cambiarNombreTextView("Wooow")
-//                val nuevasPersonas = arrayListOf<Persona>()
-//                nuevasPersonas.add(Persona("Rafael", "789456"))
-//                nuevasPersonas.add(Persona("Carlos", "654987"))
-//                nuevasPersonas.add(Persona("Francisco", "7893210"))
-//                contexto.iniciarRecyclerView(nuevasPersonas, contexto, recyclerView)
+                val cliente = crearCliente(
+                    idTextView.text.toString().toInt(),
+                    nombreTextView.text.toString(),
+                    apellidoTextView.text.toString(),
+                    cedulaTextView.text.toString()
+                )
+                contexto.eliminarCliente(cliente)
 
             }
         }
@@ -73,7 +83,20 @@ class AdaptadorListaClientes(
         myViewHolder.nombreTextView.text = cliente.nombre
         myViewHolder.apellidoTextView.text = cliente.apellido
         myViewHolder.cedulaTextView.text = cliente.cedula
+        myViewHolder.idTextView.text = cliente.id.toString()
+
     }
 
-
+    fun crearCliente(id: Int, nombre: String, apellido: String, cedula: String): Cliente {
+        val cliente = Cliente(
+            null,
+            null,
+            null,
+            id,
+            nombre,
+            apellido,
+            cedula
+        )
+        return cliente
+    }
 }

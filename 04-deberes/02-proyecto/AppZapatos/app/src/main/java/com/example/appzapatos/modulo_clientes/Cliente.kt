@@ -1,22 +1,22 @@
 package com.example.appzapatos.modulo_clientes
 
+import android.os.Parcel
+import android.os.Parcelable
 import com.example.appzapatos.modulo_compras.Compra
-import java.util.*
+import kotlin.collections.ArrayList
 
 class Cliente(
-    var compraDeCliente: ArrayList<Compra>,
-    var createdAt: Long,
-    var updatedAt: Long,
-    var id: Int,
+    var compraDeCliente: ArrayList<Compra>?,
+    var createdAt: Long?,
+    var updatedAt: Long?,
+    var id: Int?,
     var nombre: String,
     var cedula: String,
     var apellido: String
 ) {
-    var fechaCreacion: Date
-    var fechaActualizacion: Date
 
-    init {
-        fechaCreacion = Date(createdAt)
-        fechaActualizacion = Date(updatedAt)
-    }
 }
+
+
+//parcel.readSerializable() as? ArrayList<Compra>,
+//parcel.writeSerializable(compraDeCliente)

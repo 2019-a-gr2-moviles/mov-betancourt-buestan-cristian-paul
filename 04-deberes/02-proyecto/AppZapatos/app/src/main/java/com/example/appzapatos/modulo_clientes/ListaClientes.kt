@@ -1,5 +1,6 @@
 package com.example.appzapatos.modulo_clientes
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.DefaultItemAnimator
@@ -11,6 +12,7 @@ import com.example.aplicacion2.AdaptadorListaClientes
 import com.example.appzapatos.Constantes
 import com.example.appzapatos.R
 import com.github.kittinunf.fuel.core.interceptors.LogRequestAsCurlInterceptor
+import com.github.kittinunf.fuel.httpDelete
 import com.github.kittinunf.fuel.httpGet
 import com.github.kittinunf.result.Result
 import kotlinx.android.synthetic.main.activity_lista_clientes.*
@@ -25,7 +27,7 @@ class ListaClientes : AppCompatActivity() {
         setContentView(R.layout.activity_lista_clientes)
         obtenerClientes()
         Log.i("http", "Tamaño lista: ${listaClientes.size}")
-        iniciarRecyclerView(listaClientes, this, rv_clientes)
+
     }
 
     fun iniciarRecyclerView(listaClientes: ArrayList<Cliente>, actividad: ListaClientes, recyclerView: RecyclerView) {
@@ -57,16 +59,13 @@ class ListaClientes : AppCompatActivity() {
                                 .parseArray<Cliente>(data)
 
                             Log.i("http", "////////////Arreglo: ${clientes?.size}")
-                            clientes?.forEach { cliente ->
-                                (
-                                        if (cliente != null) {
-                                            Log.i("http", "iiiiiiiiiiiiii")
-                                            Log.i("http", "${cliente.nombre}")
-                                            Log.i("http", "${cliente.apellido}")
-                                            Log.i("http", "${cliente.cedula}")
+                            runOnUiThread {
+                                clientes?.forEach { cliente ->
+                                    (
                                             this.listaClientes.add(cliente)
-                                        }
-                                        )
+                                            )
+                                }
+                                iniciarRecyclerView(listaClientes, this, rv_clientes)
                             }
                         }
                     }
@@ -74,5 +73,49 @@ class ListaClientes : AppCompatActivity() {
         } catch (e: Exception) {
             Log.i("http", "${e}")
         }
+    }
+
+    fun eliminarCliente(cliente: Cliente) {
+        val url = "${Constantes.ip}${Constantes.cliente}/${cliente.id}"
+
+        url.httpDelete()
+            .responseString { request, response, result ->
+                when (result) {
+                    is Result.Failure -> {
+                        val ex = result.getException()
+                        Log.i("http", "Error: ${ex.message}")
+                    }
+                    is Result.Success -> {
+                        Log.i("http", "Resultado: ${request}")
+                        runOnUiThread {
+                            irListaClientes()
+                        }
+
+                    }
+                }
+            }
+
+    }
+
+    fun irListaClientes() {
+        intent = Intent(
+            this,
+            ListaClientes::class.java
+        )
+        startActivity(intent)
+    }
+
+    fun irActulizarCliente(cliente: Cliente) {
+        intent = Intent(
+            this,
+            ActualizarCliente::class.java
+        )
+        Log.i("http", "Cliente: ${cliente.id} ${cliente.nombre} ${cliente.apellido} ${cliente.cedula}")
+        intent.putExtra("cliente-nombre", cliente.nombre)
+        intent.putExtra("cliente-apellido", cliente.apellido)
+        intent.putExtra("cliente-cedula", cliente.cedula)
+        intent.putExtra("cliente-id", cliente.id)
+//        intent.putExtra("cliente", cliente)
+        startActivity(intent)
     }
 }
