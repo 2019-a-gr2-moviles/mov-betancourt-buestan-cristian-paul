@@ -1,10 +1,14 @@
 package com.example.appzapatos.modulo_zapatos
 
+import android.graphics.Color
 import android.support.v7.widget.RecyclerView
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.LinearLayout
+import android.widget.TextView
 import com.example.appzapatos.R
 
 class AdaptadorListaZapatos(
@@ -15,28 +19,30 @@ class AdaptadorListaZapatos(
     RecyclerView.Adapter<AdaptadorListaZapatos.MyViewHolder>() {
 
     inner class MyViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-//        var marcaTextView: TextView
-//        var colorTextView: TextView
-//        var tallaTextView: TextView
-//        var tipoTextView: TextView
-//        var cantidadTextView: TextView
-//        var precioTextView: TextView
+        var idTextView: TextView
+        var marcaTextView: TextView
+        var colorTextView: TextView
+        var tallaTextView: TextView
+        var tipoTextView: TextView
+        var cantidadTextView: TextView
+        var precioTextView: TextView
         var eliminarBoton: Button
 
 
         init {
-//            marcaTextView = view.findViewById(R.id.txt_mar_zap) as TextView
-//            colorTextView = view.findViewById(R.id.txt_col_zap) as TextView
-//            tallaTextView = view.findViewById(R.id.txt_tal_zap) as TextView
-//            tipoTextView = view.findViewById(R.id.txt_tip_zap) as TextView
-//            cantidadTextView = view.findViewById(R.id.txt_can_zap) as TextView
-//            precioTextView = view.findViewById(R.id.txt_pre_zap) as TextView
-           eliminarBoton = view.findViewById(R.id.btn_aux) as Button
-//
-//            val layout = view.findViewById(R.id.linear_layout_zap) as LinearLayout
-//            layout.setOnClickListener {
-//                Log.i("recycler-view", "Layout presionado")
-//            }
+            idTextView = view.findViewById(R.id.txt_id_zap) as TextView
+            marcaTextView = view.findViewById(R.id.txt_mar_zap) as TextView
+            colorTextView = view.findViewById(R.id.txt_col_zap) as TextView
+            tallaTextView = view.findViewById(R.id.txt_tal_zap) as TextView
+            tipoTextView = view.findViewById(R.id.txt_tip_zap) as TextView
+            cantidadTextView = view.findViewById(R.id.txt_can_zap) as TextView
+            precioTextView = view.findViewById(R.id.txt_pre_zap) as TextView
+            eliminarBoton = view.findViewById(R.id.btn_eli_zap) as Button
+
+            val layout = view.findViewById(R.id.lay_cam_zap) as LinearLayout
+            layout.setOnClickListener {
+                Log.i("http-layout", "Layout presionado")
+            }
 
         }
     }
@@ -61,13 +67,23 @@ class AdaptadorListaZapatos(
     }
 
     override fun onBindViewHolder(myViewHolder: AdaptadorListaZapatos.MyViewHolder, position: Int) {
-//        val zapato: Zapato = listaZapatos[position]
-//        myViewHolder.marcaTextView.text = zapato.marca
-//        myViewHolder.colorTextView.text = zapato.color
-//        myViewHolder.tipoTextView.text = zapato.tipo
-//        myViewHolder.tallaTextView.text = zapato.talla.toString()
-//        myViewHolder.cantidadTextView.text = zapato.cantidad.toString()
-//        myViewHolder.precioTextView.text = zapato.precio.toString()
+        val zapato: Zapato = listaZapatos[position]
+        myViewHolder.idTextView.text = zapato.id.toString()
+        myViewHolder.marcaTextView.text = zapato.marca
+        myViewHolder.colorTextView.text = zapato.color
+        myViewHolder.colorTextView.setBackgroundColor(Color.parseColor(zapato.color));
+        myViewHolder.colorTextView.setTextColor(Color.parseColor(zapato.color));
+        myViewHolder.tipoTextView.text = zapato.tipo
+        myViewHolder.tallaTextView.text = zapato.talla.toString()
+        myViewHolder.cantidadTextView.text = zapato.cantidad.toString()
+        myViewHolder.precioTextView.text = zapato.precio.toString()
+
+//        listaZapatos.forEach { zapato ->
+//            Log.i(
+//                "http-zapato",
+//                "${zapato.id} ${zapato.marca} ${zapato.color} ${zapato.talla} ${zapato.tipo} ${zapato.cantidad} ${zapato.precio}"
+//            )
+//        }
     }
 
 }

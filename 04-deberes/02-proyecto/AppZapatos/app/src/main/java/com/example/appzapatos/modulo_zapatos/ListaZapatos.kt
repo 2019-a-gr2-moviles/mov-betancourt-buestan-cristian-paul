@@ -11,7 +11,6 @@ import com.example.appzapatos.Constantes
 import com.example.appzapatos.R
 import com.github.kittinunf.fuel.httpGet
 import com.github.kittinunf.result.Result
-import kotlinx.android.synthetic.main.activity_lista_clientes.*
 import kotlinx.android.synthetic.main.activity_lista_zapatos.*
 import java.lang.Exception
 
@@ -27,51 +26,46 @@ class ListaZapatos : AppCompatActivity() {
     }
 
     fun iniciarRecyclerView(listaZapatos: ArrayList<Zapato>, actividad: ListaZapatos, recyclerView: RecyclerView) {
-        val adaptadorZapato = AdaptadorListaZapatos2(listaZapatos, actividad, recyclerView)
-        rv_clientes.adapter = adaptadorZapato
-        rv_clientes.itemAnimator = DefaultItemAnimator()
-        rv_clientes.layoutManager = LinearLayoutManager(actividad)
+        val adaptadorZapato = AdaptadorListaZapatos(listaZapatos, actividad, recyclerView)
+        rv_zapatos.adapter = adaptadorZapato
+        rv_zapatos.itemAnimator = DefaultItemAnimator()
+        rv_zapatos.layoutManager = LinearLayoutManager(actividad)
 
         adaptadorZapato.notifyDataSetChanged()
     }
 
     fun obtenerClientes() {
         //this.listaClientes.clear()
-        try {
-            val url = (Constantes.ip + Constantes.zapato)
-            Log.i("http", url)
-            url.httpGet()
-                .responseString { request, response, result ->
-                    when (result) {
-                        is Result.Failure -> {
-                            val ex = result.getException()
-                            Log.i("http", "Error: ${ex.message}")
+
+        val url = (Constantes.ip + Constantes.zapato)
+        Log.i("http", url)
+        url.httpGet()
+            .responseString { request, response, result ->
+                when (result) {
+                    is Result.Failure -> {
+                        val ex = result.getException()
+                        Log.i("http", "Error: ${ex.message}")
+                    }
+                    is Result.Success -> {
+                        val data = result.get()
+                        Log.i("http", "Data: ${data}")
+
+                        val zapatos = Klaxon()
+                            .parseArray<Zapato>(data)
+
+
+                        Log.i("http", "////////////Arreglo: ${zapatos?.size}")
+                        zapatos?.forEach { zapato ->
+                            (
+                                    this.listaZapatos.add(zapato)
+                                    )
                         }
-                        is Result.Success -> {
-                            val data = result.get()
-                            Log.i("http", "Data: ${data}")
-
-                            val zapatos = Klaxon()
-                                .parseArray<Zapato>(data)
-
-
-                            Log.i("http", "////////////Arreglo: ${zapatos?.size}")
-                            zapatos?.forEach { zapato ->
-                                (
-                                        if (zapato != null) {
-                                            Log.i("http", "iiiiiiiiiiiiii")
-                                            this.listaZapatos.add(zapato)
-                                        }
-                                        )
-                            }
-                            runOnUiThread {
-                                iniciarRecyclerView(listaZapatos, this, rv_zapatos)
-                            }
+                        runOnUiThread {
+                            iniciarRecyclerView(listaZapatos, this, rv_zapatos)
                         }
+
                     }
                 }
-        } catch (e: Exception) {
-            Log.i("http", "${e}")
-        }
+            }
     }
 }
