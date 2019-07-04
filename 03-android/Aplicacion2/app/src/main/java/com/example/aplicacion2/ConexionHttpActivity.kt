@@ -1,6 +1,6 @@
 package com.example.aplicacion2
 
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import com.beust.klaxon.Klaxon
@@ -9,6 +9,7 @@ import com.github.kittinunf.fuel.httpGet
 import java.lang.Exception
 import com.github.kittinunf.result.Result.*
 import com.github.kittinunf.fuel.httpGet
+import com.github.kittinunf.fuel.httpPost
 
 
 class ConexionHttpActivity : AppCompatActivity() {
@@ -115,29 +116,59 @@ class ConexionHttpActivity : AppCompatActivity() {
 //            Log.i("http",
 //                "Error instanciando la empresa")
 //        }
+//
+//
+//
+// //////////////////////////////////////////////
+//        val url = "http://172.31.104.91:1337/empresa/1"
+//
+//        url.httpGet()
+//            .responseString { request, response, result ->
+//                when (result) {
+//                    is Failure -> {
+//                        val ex = result.getException()
+//                        Log.i("http", "Error: ${ex.message}")
+//                    }
+//                    is Success -> {
+//                        val data = result.get()
+//                        Log.i("http", "Data: ${data}")
+//
+//                        val empresaParseada = Klaxon().parse<Empresa>(data)
+//                        if (empresaParseada != null) {
+//                            Log.i("http", "iiiiiiiiiiiiii")
+//                            Log.i("http", "${empresaParseada.nombre}")
+//                            Log.i("http", "${empresaParseada.id}")
+//                        }
+//                    }
+//                }
+//            }
 
-        val url = "http://172.31.104.106:1337/empresa/1"
+////////////////////////////////////////////////////////////////////////////////////
+        // node app.js -> package.json
+        val url = "http://172.31.104.91:1337/empresa"
 
-        url.httpGet()
-            .responseString { request, response, result ->
-                when (result) {
-                    is Failure -> {
-                        val ex = result.getException()
-                        Log.i("http", "Error: ${ex.message}")
-                    }
-                    is Success -> {
-                        val data = result.get()
-                        Log.i("http", "Data: ${data}")
+        val parametrosCrearEmpresa = listOf(
+            "nombre" to "Cristian",
+            "apellido" to "Betancourt",
+            "sueldo" to 12.20,
+            "casado" to false,
+            "hijos" to null
+        )
 
-                        val empresaParseada = Klaxon().parse<Empresa>(data)
-                        if (empresaParseada != null) {
-                            Log.i("http", "iiiiiiiiiiiiii")
-                            Log.i("http", "${empresaParseada.nombre}")
-                            Log.i("http", "${empresaParseada.id}")
-                        }
-                    }
+        url.httpPost(parametrosCrearEmpresa).responseString { request, response, result ->
+            when (result) {
+                is Failure -> {
+                    val ex = result.getException()
+                    Log.i("http", "Error: ${ex.message}")
+                }
+                is Success -> {
+                    val data = result.get()
+                    Log.i("http", "Data: ${data}")
+
                 }
             }
+
+        }
     }
 }
 

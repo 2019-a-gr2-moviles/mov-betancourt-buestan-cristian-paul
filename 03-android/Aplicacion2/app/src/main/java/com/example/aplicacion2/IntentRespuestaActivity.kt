@@ -3,7 +3,7 @@ package com.example.aplicacion2
 import android.app.Activity
 import android.content.ContentResolver
 import android.content.Intent
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.ContactsContract
 import android.util.Log

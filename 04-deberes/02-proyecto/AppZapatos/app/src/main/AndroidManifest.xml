@@ -13,6 +13,10 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             android:usesCleartextTraffic="true">
+        <activity android:name=".modulo_zapatos.Prueba">
+        </activity>
+        <activity android:name=".modulo_clientes.Prueba">
+        </activity>
         <activity android:name=".modulo_clientes.ActualizarCliente">
         </activity>
         <activity android:name=".modulo_clientes.CrearCliente">

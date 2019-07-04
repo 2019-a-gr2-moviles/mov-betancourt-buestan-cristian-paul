@@ -11,12 +11,10 @@ import com.beust.klaxon.Klaxon
 import com.example.aplicacion2.AdaptadorListaClientes
 import com.example.appzapatos.Constantes
 import com.example.appzapatos.R
-import com.github.kittinunf.fuel.core.interceptors.LogRequestAsCurlInterceptor
 import com.github.kittinunf.fuel.httpDelete
 import com.github.kittinunf.fuel.httpGet
 import com.github.kittinunf.result.Result
 import kotlinx.android.synthetic.main.activity_lista_clientes.*
-import kotlinx.android.synthetic.main.activity_menu_clientes.*
 import java.lang.Exception
 
 class ListaClientes : AppCompatActivity() {
@@ -26,7 +24,6 @@ class ListaClientes : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_lista_clientes)
         obtenerClientes()
-        Log.i("http", "Tamaño lista: ${listaClientes.size}")
 
     }
 
@@ -58,13 +55,12 @@ class ListaClientes : AppCompatActivity() {
                             val clientes = Klaxon()
                                 .parseArray<Cliente>(data)
 
-                            Log.i("http", "////////////Arreglo: ${clientes?.size}")
+                            clientes?.forEach { cliente ->
+                                (
+                                        this.listaClientes.add(cliente)
+                                        )
+                            }
                             runOnUiThread {
-                                clientes?.forEach { cliente ->
-                                    (
-                                            this.listaClientes.add(cliente)
-                                            )
-                                }
                                 iniciarRecyclerView(listaClientes, this, rv_clientes)
                             }
                         }
@@ -86,15 +82,12 @@ class ListaClientes : AppCompatActivity() {
                         Log.i("http", "Error: ${ex.message}")
                     }
                     is Result.Success -> {
-                        Log.i("http", "Resultado: ${request}")
                         runOnUiThread {
                             irListaClientes()
                         }
-
                     }
                 }
             }
-
     }
 
     fun irListaClientes() {
@@ -110,12 +103,10 @@ class ListaClientes : AppCompatActivity() {
             this,
             ActualizarCliente::class.java
         )
-        Log.i("http", "Cliente: ${cliente.id} ${cliente.nombre} ${cliente.apellido} ${cliente.cedula}")
         intent.putExtra("cliente-nombre", cliente.nombre)
         intent.putExtra("cliente-apellido", cliente.apellido)
         intent.putExtra("cliente-cedula", cliente.cedula)
-        intent.putExtra("cliente-id",cliente.id as Int)
-//        intent.putExtra("cliente", cliente)
+        intent.putExtra("cliente-id", cliente.id as Int)
         startActivity(intent)
     }
 }

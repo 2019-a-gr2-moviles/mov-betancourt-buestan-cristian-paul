@@ -41,10 +41,6 @@ class CrearCliente : AppCompatActivity() {
                         }
                     """
 
-        Log.i("http-crear", "${json}")
-        Log.i("http-crear", "${url}")
-        Log.i("http-crear", "${cliente.nombre} ${cliente.apellido} ${cliente.cedula} ")
-
         url.httpPost().body(json)
             .responseString { request, response, result ->
                 when (result) {
@@ -53,9 +49,9 @@ class CrearCliente : AppCompatActivity() {
                         Log.i("http", "Error: ${ex.message}")
                     }
                     is Result.Success -> {
-//                        Log.i("http", "rEQUEST!!!!!!!!!1TODO BIIIIIIIIIIIIIIIIIEN: ${request}")
-                        irListaClientes()
-
+                        runOnUiThread {
+                            irListaClientes()
+                        }
                     }
                 }
             }
