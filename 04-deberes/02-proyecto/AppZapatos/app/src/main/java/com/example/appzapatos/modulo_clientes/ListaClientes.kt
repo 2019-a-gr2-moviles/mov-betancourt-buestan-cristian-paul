@@ -114,7 +114,7 @@ class ListaClientes : AppCompatActivity() {
         intent.putExtra("cliente-nombre", cliente.nombre)
         intent.putExtra("cliente-apellido", cliente.apellido)
         intent.putExtra("cliente-cedula", cliente.cedula)
-        intent.putExtra("cliente-id", cliente.id)
+        intent.putExtra("cliente-id",cliente.id as Int)
 //        intent.putExtra("cliente", cliente)
         startActivity(intent)
     }

@@ -7,7 +7,9 @@
         android:layout_height="match_parent"
         tools:context=".modulo_clientes.ListaClientes">
     <android.support.v7.widget.RecyclerView
-            android:layout_width="387dp"
-            android:layout_height="723dp" tools:layout_editor_absoluteY="8dp" tools:layout_editor_absoluteX="8dp"
-            android:id="@+id/rv_clientes" android:background="@color/colorFondo"/>
+            android:layout_width="414dp"
+            android:layout_height="734dp" tools:layout_editor_absoluteY="-9dp"
+            android:id="@+id/rv_clientes" android:background="@color/colorFondo"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"/>
 </android.support.constraint.ConstraintLayout>
