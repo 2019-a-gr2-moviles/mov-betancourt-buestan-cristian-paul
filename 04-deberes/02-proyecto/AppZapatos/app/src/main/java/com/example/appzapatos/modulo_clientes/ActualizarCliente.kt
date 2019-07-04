@@ -24,7 +24,6 @@ class ActualizarCliente : AppCompatActivity() {
         val clienteApellido: String? = this.intent.getStringExtra("cliente-apellido")
         val clienteCedula: String? = this.intent.getStringExtra("cliente-cedula")
         val clienteId: Int? = this.intent.getIntExtra("cliente-id", -1)
-        Log.i("http-recibido", "${clienteId} ${clienteNombre} ${clienteApellido} ${clienteCedula}")
 
         txt_act_nom_cli.hint = clienteNombre
         txt_act_ape_cli.hint = clienteApellido
@@ -32,21 +31,17 @@ class ActualizarCliente : AppCompatActivity() {
         txt_act_id_cli.text = clienteId.toString()
 
         btn_eje_act_cli.setOnClickListener {
-            if (validar()) {
-                val cliente =
-                    Cliente(
-                        null,
-                        null,
-                        null,
-                        txt_act_id_cli.text.toString().toInt(),
-                        txt_act_nom_cli.text.toString(),
-                        txt_act_ape_cli.text.toString(),
-                        txt_act_ced_cli.text.toString()
-                    )
-                actualizarCliente(cliente)
-            }else{
-                Log.i("http-actualizar", "no entro")
-            }
+            val cliente =
+                Cliente(
+                    null,
+                    null,
+                    null,
+                    txt_act_id_cli.text.toString().toInt(),
+                    txt_act_nom_cli.text.toString(),
+                    txt_act_ape_cli.text.toString(),
+                    txt_act_ced_cli.text.toString()
+                )
+            actualizarCliente(cliente)
 
         }
 
@@ -70,10 +65,6 @@ class ActualizarCliente : AppCompatActivity() {
                         }
                     """
 
-        Log.i("http-actualizar", "${json}")
-        Log.i("http-actualizar", "${url}")
-        Log.i("http-actualizar", "${cliente.id} ${cliente.nombre} ${cliente.apellido} ${cliente.cedula} ")
-
         url.httpPut().body(json)
             .responseString { request, response, result ->
                 when (result) {
@@ -82,7 +73,6 @@ class ActualizarCliente : AppCompatActivity() {
                         Log.i("http", "Error: ${ex.message}")
                     }
                     is Result.Success -> {
-                        Log.i("http", "rEQUEST!!!!!!!!!1TODO BIIIIIIIIIIIIIIIIIEN: ${request}")
 
                         runOnUiThread {
                             irListaClientes()
