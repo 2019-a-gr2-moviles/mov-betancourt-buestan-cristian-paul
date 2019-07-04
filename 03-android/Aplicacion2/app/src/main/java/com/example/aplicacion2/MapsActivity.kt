@@ -1,7 +1,12 @@
 package com.example.aplicacion2
 
-import android.support.v7.app.AppCompatActivity
+import android.app.Activity
+import android.content.pm.PackageManager
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -13,10 +18,13 @@ import com.google.android.gms.maps.model.MarkerOptions
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
     private lateinit var mMap: GoogleMap
+    private var tienePermisosLocalizacion = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_maps)
+        solicitarPermisosLocalizacion()
+
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         val mapFragment = supportFragmentManager
             .findFragmentById(R.id.map) as SupportMapFragment
@@ -34,10 +42,39 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
      */
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
-
+        establecerConfiguracionMapa(mMap)
         // Add a marker in Sydney and move the camera
-        val sydney = LatLng(-34.0, 151.0)
+        val sydney = LatLng(-1.831239, -78.183403)
         mMap.addMarker(MarkerOptions().position(sydney).title("Marker in Sydney"))
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(sydney, 13f))
+
+    }
+
+    fun establecerConfiguracionMapa(mapa: GoogleMap) {
+        with(mapa) {
+            mapa.isMyLocationEnabled=true
+            this.uiSettings.isZoomControlsEnabled = true
+            uiSettings.isMyLocationButtonEnabled = true
+        }
+
+    }
+
+    fun solicitarPermisosLocalizacion() {
+        val permisoFineLocation = ContextCompat
+            .checkSelfPermission(
+                this.applicationContext,
+                android.Manifest.permission.ACCESS_FINE_LOCATION
+            )
+
+        val tienePermiso = permisoFineLocation == PackageManager.PERMISSION_GRANTED
+
+        if (tienePermiso) {
+            Log.i("mapa", "Tiene permisos de FINE_LOCATION")
+            this.tienePermisosLocalizacion = true
+        } else {
+            // Codigo que vamos a esperar (1)
+            ActivityCompat.requestPermissions(this, arrayOf(android.Manifest.permission.ACCESS_FINE_LOCATION), 1)
+        }
+
     }
 }
