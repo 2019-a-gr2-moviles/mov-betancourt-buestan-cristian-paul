@@ -110,5 +110,13 @@ class MainActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
+    fun irMapa() {
+        val intent = Intent(
+            this,
+            MapsActivity::class.java
+        )
+        startActivity(intent)
+    }
+
 }
 
