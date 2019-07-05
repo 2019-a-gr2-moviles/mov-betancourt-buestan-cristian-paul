@@ -15,6 +15,7 @@
     <string name="cedula_cliente">Cedula</string>
     <string name="btn_eliminar">Eliminar</string>
     <string name="codigo">CODIGO:</string>
+    <string name="id_zapato">Id</string>
     <string name="marca_zapato">Marca</string>
     <string name="color_zapato">Color</string>
     <string name="talla_zapato">Talla</string>

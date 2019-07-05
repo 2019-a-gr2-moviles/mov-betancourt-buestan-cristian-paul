@@ -10,6 +10,7 @@ import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.TextView
 import com.example.appzapatos.R
+import com.example.appzapatos.modulo_clientes.Cliente
 
 class AdaptadorListaZapatos(
     private val listaZapatos: ArrayList<Zapato>,
@@ -41,7 +42,33 @@ class AdaptadorListaZapatos(
 
             val layout = view.findViewById(R.id.lay_cam_zap) as LinearLayout
             layout.setOnClickListener {
-                Log.i("http-layout", "Layout presionado")
+                val zapato = crearZapato(
+                    idTextView.text.toString().toInt(),
+                    marcaTextView.text.toString(),
+                    colorTextView.text.toString(),
+                    tallaTextView.text.toString().toInt(),
+                    tipoTextView.text.toString(),
+                    cantidadTextView.text.toString().toInt(),
+                    precioTextView.text.toString().toDouble()
+
+                )
+                contexto.irActulizarZapato(zapato)
+            }
+
+            eliminarBoton.setOnClickListener {
+
+                val zapato = crearZapato(
+                    idTextView.text.toString().toInt(),
+                    marcaTextView.text.toString(),
+                    colorTextView.text.toString(),
+                    tallaTextView.text.toString().toInt(),
+                    tipoTextView.text.toString(),
+                    cantidadTextView.text.toString().toInt(),
+                    precioTextView.text.toString().toDouble()
+
+                )
+                contexto.eliminarCliente(zapato)
+
             }
 
         }
@@ -86,4 +113,23 @@ class AdaptadorListaZapatos(
 //        }
     }
 
+    fun crearZapato(
+        id: Int,
+        marca: String,
+        color: String,
+        talla: Int,
+        tipo: String,
+        cantidad: Int,
+        precio: Double
+    ): Zapato {
+        val zapato = Zapato(
+            null,
+            null,
+            null,
+            id,
+            marca,
+            color, talla, tipo, cantidad, precio
+        )
+        return zapato
+    }
 }
