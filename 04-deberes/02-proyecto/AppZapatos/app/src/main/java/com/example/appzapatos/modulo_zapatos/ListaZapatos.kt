@@ -1,5 +1,6 @@
 package com.example.appzapatos.modulo_zapatos
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.DefaultItemAnimator
@@ -9,6 +10,10 @@ import android.util.Log
 import com.beust.klaxon.Klaxon
 import com.example.appzapatos.Constantes
 import com.example.appzapatos.R
+import com.example.appzapatos.modulo_clientes.ActualizarCliente
+import com.example.appzapatos.modulo_clientes.Cliente
+import com.example.appzapatos.modulo_clientes.ListaClientes
+import com.github.kittinunf.fuel.httpDelete
 import com.github.kittinunf.fuel.httpGet
 import com.github.kittinunf.result.Result
 import kotlinx.android.synthetic.main.activity_lista_zapatos.*
@@ -68,4 +73,47 @@ class ListaZapatos : AppCompatActivity() {
                 }
             }
     }
+
+    fun irActulizarZapato(zapato: Zapato) {
+        intent = Intent(
+            this,
+            ActualizarZapato::class.java
+        )
+        intent.putExtra("zapato-marca", zapato.marca)
+        intent.putExtra("zapato-color", zapato.color)
+        intent.putExtra("zapato-talla", zapato.talla)
+        intent.putExtra("zapato-tipo", zapato.tipo)
+        intent.putExtra("zapato-cantidad", zapato.cantidad)
+        intent.putExtra("zapato-precio", zapato.precio)
+        intent.putExtra("zapato-id", zapato.id)
+        startActivity(intent)
+    }
+
+    fun eliminarCliente(zapato: Zapato) {
+        val url = "${Constantes.ip}${Constantes.zapato}/${zapato.id}"
+
+        url.httpDelete()
+            .responseString { request, response, result ->
+                when (result) {
+                    is Result.Failure -> {
+                        val ex = result.getException()
+                        Log.i("http", "Error: ${ex.message}")
+                    }
+                    is Result.Success -> {
+                        runOnUiThread {
+                            irListaZapatos()
+                        }
+                    }
+                }
+            }
+    }
+
+    fun irListaZapatos() {
+        intent = Intent(
+            this,
+            ListaZapatos::class.java
+        )
+        startActivity(intent)
+    }
+
 }

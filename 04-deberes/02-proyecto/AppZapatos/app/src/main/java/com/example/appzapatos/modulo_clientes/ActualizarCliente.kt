@@ -3,16 +3,12 @@ package com.example.appzapatos.modulo_clientes
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.support.design.widget.Snackbar
-import android.text.Editable
 import android.util.Log
 import com.example.appzapatos.Constantes
 import com.example.appzapatos.R
-import com.github.kittinunf.fuel.httpPost
 import com.github.kittinunf.fuel.httpPut
 import com.github.kittinunf.result.Result
 import kotlinx.android.synthetic.main.activity_actualizar_cliente.*
-import kotlinx.android.synthetic.main.activity_crear_cliente.*
 
 class ActualizarCliente : AppCompatActivity() {
 
