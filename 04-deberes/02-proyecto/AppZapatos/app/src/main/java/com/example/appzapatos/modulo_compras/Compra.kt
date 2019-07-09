@@ -6,19 +6,12 @@ class Compra(
     var id: Int,
     private var createdAt: Long,
     private var updatedAt: Long,
-    var fecha: Date,
+    var fecha: String,
     var cantidad: Int,
-    var total: String,
-    var validez: Int,
+    var total: Double,
+    var validez: Boolean,
     var codigoZap: Int,
     var codigoCli: Int
 ) {
-    var fechaCreacion: Date
-    var fechaActualizacion: Date
 
-    init {
-        fechaCreacion = Date(createdAt)
-        fechaActualizacion = Date(updatedAt)
-        fecha =fechaCreacion
-    }
 }

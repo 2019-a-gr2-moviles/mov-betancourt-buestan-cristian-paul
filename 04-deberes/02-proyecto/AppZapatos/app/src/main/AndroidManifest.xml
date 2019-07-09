@@ -13,6 +13,14 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             android:usesCleartextTraffic="true">
+        <activity android:name=".modulo_zapatos.CrearZapato">
+        </activity>
+        <activity android:name=".modulo_compras.CrearCompra">
+        </activity>
+        <activity android:name=".modulo_compras.ActualizarCompra">
+        </activity>
+        <activity android:name=".modulo_compras.ListaCompras">
+        </activity>
         <activity android:name=".modulo_zapatos.ActualizarZapato">
         </activity>
         <activity android:name=".modulo_zapatos.Main2Activity">

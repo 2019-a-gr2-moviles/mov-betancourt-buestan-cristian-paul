@@ -11,7 +11,6 @@ import android.widget.TextView
 import com.example.appzapatos.R
 import com.example.appzapatos.modulo_clientes.Cliente
 import com.example.appzapatos.modulo_clientes.ListaClientes
-import kotlinx.android.synthetic.main.activity_crear_cliente.*
 
 class AdaptadorListaClientes(
     private val listaClientes: ArrayList<Cliente>,
