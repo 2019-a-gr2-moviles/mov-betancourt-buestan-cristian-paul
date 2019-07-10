@@ -88,7 +88,7 @@ class AdaptadorListaClientes(
 
     fun crearCliente(id: Int, nombre: String, apellido: String, cedula: String): Cliente {
         val cliente = Cliente(
-            null,
+//            null,
             null,
             null,
             id,

@@ -21,7 +21,7 @@ class CrearZapato : AppCompatActivity() {
                 null,
                 null,
                 null,
-                null,
+//                null,
                 txt_ing_mar_zap.text.toString(),
                 txt_ing_col_zap.text.toString(),
                 txt_ing_tal_zap.text.toString().toInt(),

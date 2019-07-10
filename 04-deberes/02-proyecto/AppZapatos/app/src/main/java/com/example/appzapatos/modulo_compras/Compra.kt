@@ -1,17 +1,17 @@
 package com.example.appzapatos.modulo_compras
 
-import java.util.*
+import com.example.appzapatos.clases_auxiliares.ClienteAux
+import com.example.appzapatos.clases_auxiliares.ZapatoAux
 
 class Compra(
-    var id: Int,
-    private var createdAt: Long,
-    private var updatedAt: Long,
-    var fecha: String,
-    var cantidad: Int,
-    var total: Double,
-    var validez: Boolean,
-    var codigoZap: Int,
-    var codigoCli: Int
+    var id: Int?,
+    var fecha: String?,
+    var cantidad: Int?,
+    var total: Double?,
+    var validez: Boolean?,
+    var codigoCli: ClienteAux?,
+    var codigoZap: ZapatoAux?
+
 ) {
 
 }

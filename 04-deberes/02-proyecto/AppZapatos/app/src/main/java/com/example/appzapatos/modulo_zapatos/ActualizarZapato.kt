@@ -29,7 +29,7 @@ class ActualizarZapato : AppCompatActivity() {
             "$zapatoId $zapatoMarca $zapatoColor $zapatoTalla $zapatoTipo $zapatoCantidad $zapatoPrecio"
         )
 
-        txt_act_id_zap.text= zapatoId.toString()
+        txt_act_id_zap.text = zapatoId.toString()
         txt_act_mar_zap.hint = zapatoMarca
         txt_act_col_zap.hint = zapatoColor
         txt_act_tip_zap.hint = zapatoTipo
@@ -39,7 +39,7 @@ class ActualizarZapato : AppCompatActivity() {
 
         btn_act_zap.setOnClickListener {
             val zapato = Zapato(
-                null,
+//                null,
                 null,
                 null,
                 txt_act_id_zap.text.toString().toInt(),

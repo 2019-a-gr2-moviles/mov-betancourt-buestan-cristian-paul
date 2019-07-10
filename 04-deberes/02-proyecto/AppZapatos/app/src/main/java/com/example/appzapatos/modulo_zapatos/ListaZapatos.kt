@@ -10,14 +10,10 @@ import android.util.Log
 import com.beust.klaxon.Klaxon
 import com.example.appzapatos.Constantes
 import com.example.appzapatos.R
-import com.example.appzapatos.modulo_clientes.ActualizarCliente
-import com.example.appzapatos.modulo_clientes.Cliente
-import com.example.appzapatos.modulo_clientes.ListaClientes
 import com.github.kittinunf.fuel.httpDelete
 import com.github.kittinunf.fuel.httpGet
 import com.github.kittinunf.result.Result
 import kotlinx.android.synthetic.main.activity_lista_zapatos.*
-import java.lang.Exception
 
 class ListaZapatos : AppCompatActivity() {
 
@@ -26,8 +22,7 @@ class ListaZapatos : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_lista_zapatos)
-        obtenerClientes()
-
+        obtenerZapatos()
     }
 
     fun iniciarRecyclerView(listaZapatos: ArrayList<Zapato>, actividad: ListaZapatos, recyclerView: RecyclerView) {
@@ -39,7 +34,7 @@ class ListaZapatos : AppCompatActivity() {
         adaptadorZapato.notifyDataSetChanged()
     }
 
-    fun obtenerClientes() {
+    fun obtenerZapatos() {
         //this.listaClientes.clear()
 
         val url = (Constantes.ip + Constantes.zapato)
@@ -58,8 +53,6 @@ class ListaZapatos : AppCompatActivity() {
                         val zapatos = Klaxon()
                             .parseArray<Zapato>(data)
 
-
-                        Log.i("http", "////////////Arreglo: ${zapatos?.size}")
                         zapatos?.forEach { zapato ->
                             (
                                     this.listaZapatos.add(zapato)
@@ -68,7 +61,6 @@ class ListaZapatos : AppCompatActivity() {
                         runOnUiThread {
                             iniciarRecyclerView(listaZapatos, this, rv_zapatos)
                         }
-
                     }
                 }
             }
@@ -89,7 +81,7 @@ class ListaZapatos : AppCompatActivity() {
         startActivity(intent)
     }
 
-    fun eliminarCliente(zapato: Zapato) {
+    fun eliminarZapato(zapato: Zapato) {
         val url = "${Constantes.ip}${Constantes.zapato}/${zapato.id}"
 
         url.httpDelete()
