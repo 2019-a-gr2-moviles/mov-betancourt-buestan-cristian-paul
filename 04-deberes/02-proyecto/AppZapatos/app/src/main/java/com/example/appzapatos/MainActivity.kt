@@ -31,6 +31,7 @@ class MainActivity : AppCompatActivity() {
             this,
             MenuZapatos::class.java
         )
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
         startActivity(intent)
     }
     fun irMenuClientes() {
@@ -38,12 +39,16 @@ class MainActivity : AppCompatActivity() {
             this,
             MenuClientes::class.java
         )
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
         startActivity(intent)
-    }   fun irMenuCompras() {
+    }
+
+    fun irMenuCompras() {
         val intent = Intent(
             this,
             MenuCompras::class.java
         )
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
         startActivity(intent)
     }
 }

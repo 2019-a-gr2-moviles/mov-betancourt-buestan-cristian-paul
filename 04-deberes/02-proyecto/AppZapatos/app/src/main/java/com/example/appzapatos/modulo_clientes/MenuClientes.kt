@@ -12,42 +12,34 @@ class MenuClientes : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_menu_clientes)
         btn_ver_cli.setOnClickListener {
-            irListaClientes()
+            ListaClientes()
         }
 
         btn_ing_cli.setOnClickListener {
-            irCrearCliente()
+            CrearCliente()
         }
 
         btn_mod_cli.setOnClickListener {
-            irActualizarCliente()
+            ListaClientes()
         }
     }
 
-    fun irListaClientes(){
+    fun ListaClientes() {
         intent = Intent(
             this,
             ListaClientes::class.java
         )
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
         startActivity(intent)
     }
 
-    fun irCrearCliente(){
+    fun CrearCliente() {
         intent = Intent(
             this,
             CrearCliente::class.java
         )
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
         startActivity(intent)
     }
-
-    fun irActualizarCliente(){
-        intent = Intent(
-            this,
-            ActualizarCliente::class.java
-        )
-        startActivity(intent)
-    }
-
-
 
 }

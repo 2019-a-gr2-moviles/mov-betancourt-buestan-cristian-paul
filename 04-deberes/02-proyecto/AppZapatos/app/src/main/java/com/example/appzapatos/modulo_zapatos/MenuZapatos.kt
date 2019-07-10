@@ -14,11 +14,17 @@ class MenuZapatos : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_menu_zapatos)
         btn_ver_zap.setOnClickListener {
-            irListaZapatos()
+            ListaZapatos()
         }
 
         btn_ing_zap.setOnClickListener {
-            irCrearZapato()
+            CrearZapato()
+        }
+        btn_mod_zap.setOnClickListener {
+            ListaZapatos()
+        }
+        btn_ver_zap.setOnClickListener {
+            irListaZapatos()
         }
     }
 
@@ -27,6 +33,7 @@ class MenuZapatos : AppCompatActivity() {
             this,
             ListaZapatos::class.java
         )
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
         startActivity(intent)
     }
 
@@ -35,6 +42,7 @@ class MenuZapatos : AppCompatActivity() {
             this,
             CrearZapato::class.java
         )
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
         startActivity(intent)
     }
 }

@@ -97,6 +97,7 @@ class ListaCompras : AppCompatActivity() {
             this,
             ListaCompras::class.java
         )
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
         startActivity(intent)
     }
 }
