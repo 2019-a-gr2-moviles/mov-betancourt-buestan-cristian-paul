@@ -95,6 +95,7 @@ class ListaClientes : AppCompatActivity() {
             this,
             ListaClientes::class.java
         )
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
         startActivity(intent)
     }
 
@@ -107,6 +108,7 @@ class ListaClientes : AppCompatActivity() {
         intent.putExtra("cliente-apellido", cliente.apellido)
         intent.putExtra("cliente-cedula", cliente.cedula)
         intent.putExtra("cliente-id", cliente.id as Int)
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
         startActivity(intent)
     }
 }

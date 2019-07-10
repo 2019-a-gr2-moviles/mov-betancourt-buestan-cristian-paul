@@ -78,6 +78,7 @@ class ListaZapatos : AppCompatActivity() {
         intent.putExtra("zapato-cantidad", zapato.cantidad)
         intent.putExtra("zapato-precio", zapato.precio)
         intent.putExtra("zapato-id", zapato.id)
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
         startActivity(intent)
     }
 
@@ -105,6 +106,7 @@ class ListaZapatos : AppCompatActivity() {
             this,
             ListaZapatos::class.java
         )
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
         startActivity(intent)
     }
 

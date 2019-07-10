@@ -90,6 +90,7 @@ class ActualizarZapato : AppCompatActivity() {
             this,
             ListaZapatos::class.java
         )
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
         startActivity(intent)
     }
 

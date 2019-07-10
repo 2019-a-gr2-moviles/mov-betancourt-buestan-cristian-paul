@@ -13,29 +13,31 @@ class MenuCompras : AppCompatActivity() {
         setContentView(R.layout.activity_menu_compras)
 
         btn_ing_com.setOnClickListener {
-            irCrearCompra()
+            CrearCompra()
         }
         btn_ver_com.setOnClickListener {
-            irListaCompras()
+            ListaCompras()
         }
         btn_mod_com.setOnClickListener {
-            irListaCompras()
+            ListaCompras()
         }
     }
 
-    fun irCrearCompra() {
+    fun CrearCompra() {
         intent = Intent(
             this,
             CrearCompra::class.java
         )
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
         startActivity(intent)
     }
 
-    fun irListaCompras() {
+    fun ListaCompras() {
         intent = Intent(
             this,
             ListaCompras::class.java
         )
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
         startActivity(intent)
     }
 }
