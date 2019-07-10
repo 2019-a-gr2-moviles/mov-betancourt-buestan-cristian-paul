@@ -20,6 +20,9 @@ class MenuZapatos : AppCompatActivity() {
         btn_ing_zap.setOnClickListener {
             irCrearZapato()
         }
+        btn_mod_zap.setOnClickListener {
+            irListaZapatos()
+        }
     }
 
     fun irListaZapatos() {

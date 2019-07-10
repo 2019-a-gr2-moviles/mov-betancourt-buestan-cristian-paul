@@ -1,7 +1,7 @@
 package com.example.appzapatos.modulo_clientes
 
 class Cliente(
-//    var compraDeCliente: ArrayList<Compra>?,
+//    var compraDeCliente: ArrayList<CompraAux>?,
     var createdAt: Long?,
     var updatedAt: Long?,
     var id: Int?,

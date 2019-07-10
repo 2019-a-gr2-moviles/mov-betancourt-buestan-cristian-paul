@@ -1,7 +1,7 @@
 package com.example.appzapatos.modulo_zapatos
 
 class Zapato(
-//    var compraDeZapato: ArrayList<Compra>?,
+//    var compraDeZapato: ArrayList<CompraAux>?,
     var createdAt: Long?,
     var updatedAt: Long?,
     var id: Int?,

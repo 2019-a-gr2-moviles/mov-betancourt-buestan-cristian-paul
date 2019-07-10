@@ -11,7 +11,6 @@ class Compra(
     var validez: Boolean?,
     var codigoCli: ClienteAux?,
     var codigoZap: ZapatoAux?
-
 ) {
 
 }

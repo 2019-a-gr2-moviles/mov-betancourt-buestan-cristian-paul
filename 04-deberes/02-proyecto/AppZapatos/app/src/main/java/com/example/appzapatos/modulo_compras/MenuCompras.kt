@@ -18,6 +18,9 @@ class MenuCompras : AppCompatActivity() {
         btn_ver_com.setOnClickListener {
             irListaCompras()
         }
+        btn_mod_com.setOnClickListener {
+            irListaCompras()
+        }
     }
 
     fun irCrearCompra() {

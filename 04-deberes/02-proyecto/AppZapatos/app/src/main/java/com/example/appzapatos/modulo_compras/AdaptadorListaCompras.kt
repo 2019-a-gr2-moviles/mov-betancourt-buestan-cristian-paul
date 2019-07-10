@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import com.example.appzapatos.R
 
 class AdaptadorListaCompras(
@@ -38,17 +39,20 @@ class AdaptadorListaCompras(
             anularBoton = view.findViewById(R.id.btn_anu_com) as Button
 
             anularBoton.setOnClickListener {
-
-                val compra = Compra(
-                    idTextView.text.toString().toInt(),
-                    null,
-                    null,
-                    null,
-                    false,
-                    null,
-                    null
-                )
-                contexto.actualizarCompra(compra)
+                if (!validezTextView.text.toString().equals("No valida")) {
+                    val compra = Compra(
+                        idTextView.text.toString().toInt(),
+                        null,
+                        null,
+                        null,
+                        false,
+                        null,
+                        null
+                    )
+                    contexto.actualizarCompra(compra)
+                } else {
+                    Toast.makeText(contexto, "Factura invalida", Toast.LENGTH_LONG).show();
+                }
             }
         }
     }
@@ -79,15 +83,9 @@ class AdaptadorListaCompras(
         myViewHolder.totalTextView.text = "TOTAL:   $${compra.total}"
 
         var validez = "No valida"
-
         if (compra.validez!!) {
             validez = "Valida"
-            myViewHolder.anularBoton.visibility = View.VISIBLE
-        } else {
-            myViewHolder.anularBoton.visibility = View.INVISIBLE
         }
         myViewHolder.validezTextView.text = validez
-
-
     }
 }

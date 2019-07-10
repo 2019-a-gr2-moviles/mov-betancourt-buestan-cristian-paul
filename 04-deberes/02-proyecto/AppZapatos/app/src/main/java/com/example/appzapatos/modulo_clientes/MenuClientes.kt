@@ -20,7 +20,7 @@ class MenuClientes : AppCompatActivity() {
         }
 
         btn_mod_cli.setOnClickListener {
-            irActualizarCliente()
+            irListaClientes()
         }
     }
 
