@@ -29,7 +29,7 @@ class ActualizarCliente : AppCompatActivity() {
         btn_eje_act_cli.setOnClickListener {
             val cliente =
                 Cliente(
-                    null,
+//                    null,
                     null,
                     null,
                     txt_act_id_cli.text.toString().toInt(),

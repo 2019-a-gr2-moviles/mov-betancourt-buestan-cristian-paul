@@ -22,5 +22,12 @@
     <string name="tipo_zapato">Tipo</string>
     <string name="cantidad_zapato">Cantidad</string>
     <string name="precio_zapato">Precio</string>
+    <string name="datos_cliente">Ingrese los datos del cliente solicitados</string>
+    <string name="datos_zapato">Ingrese los datos del zapato</string>
+    <string name="id_compra">Id</string>
+    <string name="fecha_compra">Fecha</string>
+    <string name="validez_compra">Validez</string>
+    <string name="zapato_compra">Zapatos</string>
+    <string name="anular_compra">ANULAR</string>
 
 </resources>

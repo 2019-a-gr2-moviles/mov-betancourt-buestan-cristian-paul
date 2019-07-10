@@ -16,12 +16,24 @@ class MenuZapatos : AppCompatActivity() {
         btn_ver_zap.setOnClickListener {
             irListaZapatos()
         }
+
+        btn_ing_zap.setOnClickListener {
+            irCrearZapato()
+        }
     }
 
     fun irListaZapatos() {
         intent = Intent(
             this,
             ListaZapatos::class.java
+        )
+        startActivity(intent)
+    }
+
+    fun irCrearZapato() {
+        intent = Intent(
+            this,
+            CrearZapato::class.java
         )
         startActivity(intent)
     }

@@ -18,7 +18,7 @@ class CrearCliente : AppCompatActivity() {
         btn_acc_ing_cli.setOnClickListener {
             if (validar()) {
                 val cliente = Cliente(
-                    null,
+//                    null,
                     null,
                     null,
                     null,

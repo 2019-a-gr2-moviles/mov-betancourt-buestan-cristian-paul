@@ -29,8 +29,7 @@ module.exports = {
     tipo: {
       type: 'string',
       required: true,
-      unique: true,
-      maxLength: 6,
+       maxLength: 6,
     },
     cantidad: {
       type: 'number',

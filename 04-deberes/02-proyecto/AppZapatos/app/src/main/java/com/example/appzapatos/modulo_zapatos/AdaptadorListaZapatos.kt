@@ -67,7 +67,7 @@ class AdaptadorListaZapatos(
                     precioTextView.text.toString().toDouble()
 
                 )
-                contexto.eliminarCliente(zapato)
+                contexto.eliminarZapato(zapato)
 
             }
 
@@ -123,12 +123,16 @@ class AdaptadorListaZapatos(
         precio: Double
     ): Zapato {
         val zapato = Zapato(
-            null,
+//            null,
             null,
             null,
             id,
             marca,
-            color, talla, tipo, cantidad, precio
+            color,
+            talla,
+            tipo,
+            cantidad,
+            precio
         )
         return zapato
     }

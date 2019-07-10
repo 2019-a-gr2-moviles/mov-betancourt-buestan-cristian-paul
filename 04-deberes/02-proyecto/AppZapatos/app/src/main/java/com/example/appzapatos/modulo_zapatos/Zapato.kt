@@ -1,11 +1,7 @@
 package com.example.appzapatos.modulo_zapatos
 
-import com.example.appzapatos.modulo_compras.Compra
-import java.util.*
-import kotlin.collections.ArrayList
-
 class Zapato(
-    var compraDeZapato: ArrayList<Compra>?,
+//    var compraDeZapato: ArrayList<Compra>?,
     var createdAt: Long?,
     var updatedAt: Long?,
     var id: Int?,

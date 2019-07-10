@@ -11,7 +11,6 @@ import android.widget.TextView
 import com.example.appzapatos.R
 import com.example.appzapatos.modulo_clientes.Cliente
 import com.example.appzapatos.modulo_clientes.ListaClientes
-import kotlinx.android.synthetic.main.activity_crear_cliente.*
 
 class AdaptadorListaClientes(
     private val listaClientes: ArrayList<Cliente>,
@@ -89,7 +88,7 @@ class AdaptadorListaClientes(
 
     fun crearCliente(id: Int, nombre: String, apellido: String, cedula: String): Cliente {
         val cliente = Cliente(
-            null,
+//            null,
             null,
             null,
             id,
