@@ -49,6 +49,10 @@ class MainActivity : AppCompatActivity() {
         btn_ciclo_vida.setOnClickListener{
             irCicloVida()
         }
+
+        btn_fragmentos.setOnClickListener {
+            irFragmentos()
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -129,6 +133,14 @@ class MainActivity : AppCompatActivity() {
         val intent = Intent(
             this,
             CicloVidaActivity::class.java
+        )
+        startActivity(intent)
+    }
+
+    fun irFragmentos() {
+        val intent = Intent(
+            this,
+           FragmentosActivity::class.java
         )
         startActivity(intent)
     }
