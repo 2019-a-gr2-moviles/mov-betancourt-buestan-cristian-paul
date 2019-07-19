@@ -35,28 +35,32 @@ class FragmentosActivity : AppCompatActivity() {
     }
 
     fun abrirFragmentoDos() {
-//        // 1) Manager
-//        val fragmentManager = supportFragmentManager
-//        // 2) Empezar la transacción
-//        val transaccion = fragmentManager.beginTransaction()
-//        // 3) Definir la instancia del fragmento
-//        val segundoFragmento = fragment_dos()
-//        // 4) Reemplazamos el fragmento
-//        transaccion.replace(R.id.ly_fragmentos, segundoFragmento)
-//        // 5) Terminar transaccion
-//        transaccion.commit()
+        // 1) Manager
+        val fragmentManager = supportFragmentManager
+        // 2) Empezar la transacción
+        val transaccion = fragmentManager.beginTransaction()
+        // 3) Definir la instancia del fragmento
+        val segundoFragmento = fragment_dos()
+        // 4) Reemplazamos el fragmento
+        transaccion.replace(R.id.ly_fragmentos, segundoFragmento)
+        // 5) Terminar transaccion
+        transaccion.commit()
     }
 
     fun abrirFragmentoTres() {
-//        // 1) Manager
-//        val fragmentManager = supportFragmentManager
-//        // 2) Empezar la transacción
-//        val transaccion = fragmentManager.beginTransaction()
-//        // 3) Definir la instancia del fragmento
-//        val tercerFragmento = fragment_tres()
-//        // 4) Reemplazamos el fragmento
-//        transaccion.replace(R.id.ly_fragmentos, tercerFragmento)
-//        // 5) Terminar transaccion
-//        transaccion.commit()
+        // 1) Manager
+        val fragmentManager = supportFragmentManager
+        // 2) Empezar la transacción
+        val transaccion = fragmentManager.beginTransaction()
+        // 3) Definir la instancia del fragmento
+        val tercerFragmento = fragment_tres()
+        // 4) Reemplazamos el fragmento
+
+        val argumentos = Bundle()
+        argumentos.putInt("contador", 1)
+        tercerFragmento.arguments = argumentos
+        transaccion.replace(R.id.ly_fragmentos, tercerFragmento)
+        // 5) Terminar transaccion
+        transaccion.commit()
     }
 }
