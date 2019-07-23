@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+              android:layout_height="wrap_content" android:orientation="vertical">
+    <TextView
+            android:text="TextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/txv_id_paciente" android:textColor="#00FFFFFF"/>
+    <TextView
+            android:text="TextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/txv_nombre_med" android:textAlignment="center"
+            android:textColor="#FD000000" android:textSize="20sp"/>
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/txv_id_med" android:textColor="#00FFFFFF"/>
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="208dp"
+                android:layout_height="wrap_content">
+            <TextView
+                    android:text="@string/txt_comp_med"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/textView6" android:textColor="#C8000000"/>
+            <TextView
+                    android:text="@string/txt_gra_med"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/textView9" android:textColor="#C8000000"/>
+            <TextView
+                    android:text="@string/txt_uso_med"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/textView10" android:textColor="#C8000000"/>
+            <TextView
+                    android:text="@string/fec_cad_med"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/textView11" android:textColor="#C8000000"/>
+            <TextView
+                    android:text="@string/txt_num_pas_med"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/textView13" android:textColor="#C8000000"/>
+        </LinearLayout>
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <TextView
+                    android:text="TextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/txv_composicion_med"/>
+            <TextView
+                    android:text="TextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/txv_gramos_med"/>
+            <TextView
+                    android:text="TextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/txv_uso_med"/>
+            <TextView
+                    android:text="TextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/txv_fecha_caducidad_med"/>
+            <TextView
+                    android:text="TextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/txv_numero_pastillas_med"/>
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+        <Button
+                android:text="@string/btn_eliminar"
+                android:layout_width="107dp"
+                android:layout_height="wrap_content" android:id="@+id/btn_eliminar_med" android:layout_weight="1"/>
+        <Button
+                android:text="@string/btn_actualizar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:layout_weight="1" android:id="@+id/btn_actualizar_pac"/>
+    </LinearLayout>
+</LinearLayout>

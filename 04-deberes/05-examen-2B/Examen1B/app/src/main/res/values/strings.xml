@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name" translatable="false">Examen2B</string>
+    <string name="app_name" translatable="false">Examen1B</string>
     <string name="title_activity_pacientes" translatable="false">Pacientes</string>
     <string name="title_activity_gestion" translatable="false">Gestión de pacientes</string>
     <string name="txt_usuario" translatable="false">Nombre</string>

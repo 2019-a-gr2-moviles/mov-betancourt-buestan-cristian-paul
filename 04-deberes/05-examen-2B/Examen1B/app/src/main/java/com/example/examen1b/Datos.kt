@@ -6,8 +6,8 @@ import kotlin.collections.ArrayList
 
 class Datos {
     companion object {
-//        var listaPacientes: ArrayList<Paciente> = listaPacientesInicial()
-//        var listaMedicamentos: ArrayList<Medicamento> = listaMedicamentoInicial()
+        var listaPacientes: ArrayList<Paciente> = listaPacientesInicial()
+        var listaMedicamentos: ArrayList<Medicamento> = listaMedicamentoInicial()
         private var idPaciente: Int = 0
         private var idMedicamento: Int = 0
         var usuario = ""
@@ -30,17 +30,17 @@ class Datos {
             }
         }
 
-//        private fun listaPacientesInicial(): ArrayList<Paciente> {
-//            val lista = arrayListOf<Paciente>()
-//            lista.add(Paciente(idPaciente(), "Cristian", "Betancourt", "01/03/1998", 0, false, -1))
-//            return lista
-//        }
-//
-//        private fun listaMedicamentoInicial(): ArrayList<Medicamento> {
-//            val lista = arrayListOf<Medicamento>()
-//            lista.add(Medicamento(idMedicamento(), 1.0, "Buprex", "AAA", "Gripe", "01/01/2020", 2, 0, -1))
-//            return lista
-//        }
+        private fun listaPacientesInicial(): ArrayList<Paciente> {
+            val lista = arrayListOf<Paciente>()
+            lista.add(Paciente(idPaciente(), "Cristian", "Betancourt", "01/03/1998", 0, false, -1))
+            return lista
+        }
+
+        private fun listaMedicamentoInicial(): ArrayList<Medicamento> {
+            val lista = arrayListOf<Medicamento>()
+            lista.add(Medicamento(idMedicamento(), 1.0, "Buprex", "AAA", "Gripe", "01/01/2020", 2, 0, -1))
+            return lista
+        }
 
         fun idPaciente(): Int {
             idPaciente++
