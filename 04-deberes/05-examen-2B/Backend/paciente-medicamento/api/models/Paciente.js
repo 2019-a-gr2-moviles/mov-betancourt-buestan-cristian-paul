@@ -12,13 +12,13 @@ module.exports = {
       type: 'string',
       required: true,
       minLength: 3,
-      maxLength: 20,
+      maxLength: 30,
     },
     apellidos: {
       type: 'string',
       required: true,
       minLength: 3,
-      maxLength: 20,
+      maxLength: 30,
     },
     fechaNacimiento: {
       required: true,
