@@ -5,7 +5,7 @@
     <TextView
             android:text="TextView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" android:id="@+id/txv_id_paciente" android:textColor="#00FFFFFF"/>
+            android:layout_height="wrap_content" android:id="@+id/txv_id_pac_med" android:textColor="#00FFFFFF"/>
     <TextView
             android:text="TextView"
             android:layout_width="match_parent"
@@ -80,6 +80,6 @@
         <Button
                 android:text="@string/btn_actualizar"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" android:layout_weight="1" android:id="@+id/btn_actualizar_pac"/>
+                android:layout_height="wrap_content" android:layout_weight="1" android:id="@+id/btn_actualizar_med"/>
     </LinearLayout>
 </LinearLayout>

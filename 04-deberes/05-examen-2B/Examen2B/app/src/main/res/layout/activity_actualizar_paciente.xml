@@ -40,7 +40,7 @@
             android:layout_height="17dp"
             android:id="@+id/sw_seg_pac_act" android:textAlignment="center"
             app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="60dp"
-            app:layout_constraintStart_toEndOf="@+id/txv_id_paciente" android:layout_marginStart="8dp"
+            app:layout_constraintStart_toEndOf="@+id/txv_id_pac_med" android:layout_marginStart="8dp"
             app:layout_constraintHorizontal_bias="0.403"
             app:layout_constraintTop_toTopOf="@+id/textView3" app:layout_constraintBottom_toBottomOf="@+id/textView3"/>
     <EditText
