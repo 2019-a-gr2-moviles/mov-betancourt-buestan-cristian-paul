@@ -163,35 +163,35 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback,
 
     }
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        when (resultCode) {
-            Activity.RESULT_OK -> {
-                Log.i("intent-respuesta", "Lo logramos!!!! ${Activity.RESULT_OK}")
-                when (requestCode) {
-                    304 -> {
-                        Log.i("intent-respuesta", "Contacto llego!!!!")
-                        val uri = data?.data
-                        var cursor = contentResolver.query(uri, null, null, null, null)
-                        cursor.moveToFirst()
-                        val indiceTelefono = cursor.getColumnIndex(
-                            ContactsContract.CommonDataKinds.Phone.NUMBER
-                        )
-
-                        val telefono = cursor.getString(indiceTelefono)
-                        Log.i("intent-respuesta", "Telefono ${telefono}")
-
-                    }
-                    305 -> {
-                        val nombre = data?.getStringExtra("nombreUsuario")
-                        val edad = data?.getIntExtra("edadUsuario", 0)
-                        Log.i("intent-respuesta", "Nombre: $nombre //////////   Edad: $edad")
-                    }
-                }
-            }
-            Activity.RESULT_CANCELED -> {
-                Log.i("intent-respuesta", "No escogiooo!!! ${Activity.RESULT_CANCELED}")
-            }
-        }
-    }
-
+//    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+//        when (resultCode) {
+//            Activity.RESULT_OK -> {
+//                Log.i("intent-respuesta", "Lo logramos!!!! ${Activity.RESULT_OK}")
+//                when (requestCode) {
+//                    304 -> {
+//                        Log.i("intent-respuesta", "Contacto llego!!!!")
+//                        val uri = data?.data
+//                        var cursor = contentResolver.query(uri, null, null, null, null)
+//                        cursor.moveToFirst()
+//                        val indiceTelefono = cursor.getColumnIndex(
+//                            ContactsContract.CommonDataKinds.Phone.NUMBER
+//                        )
+//
+//                        val telefono = cursor.getString(indiceTelefono)
+//                        Log.i("intent-respuesta", "Telefono ${telefono}")
+//
+//                    }
+//                    305 -> {
+//                        val nombre = data?.getStringExtra("nombreUsuario")
+//                        val edad = data?.getIntExtra("edadUsuario", 0)
+//                        Log.i("intent-respuesta", "Nombre: $nombre //////////   Edad: $edad")
+//                    }
+//                }
+//            }
+//            Activity.RESULT_CANCELED -> {
+//                Log.i("intent-respuesta", "No escogiooo!!! ${Activity.RESULT_CANCELED}")
+//            }
+//        }
+//    }
+//
 }

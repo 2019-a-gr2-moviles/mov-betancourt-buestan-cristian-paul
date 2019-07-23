@@ -45,6 +45,14 @@ class MainActivity : AppCompatActivity() {
         btn_mapa.setOnClickListener {
             irMapa()
         }
+
+        btn_ciclo_vida.setOnClickListener{
+            irCicloVida()
+        }
+
+        btn_fragmentos.setOnClickListener {
+            irFragmentos()
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -117,6 +125,22 @@ class MainActivity : AppCompatActivity() {
         val intent = Intent(
             this,
             MapsActivity::class.java
+        )
+        startActivity(intent)
+    }
+
+    fun irCicloVida() {
+        val intent = Intent(
+            this,
+            CicloVidaActivity::class.java
+        )
+        startActivity(intent)
+    }
+
+    fun irFragmentos() {
+        val intent = Intent(
+            this,
+           FragmentosActivity::class.java
         )
         startActivity(intent)
     }
