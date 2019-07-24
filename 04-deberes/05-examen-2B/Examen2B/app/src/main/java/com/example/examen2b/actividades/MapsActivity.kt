@@ -1,5 +1,6 @@
 package com.example.examen2b.actividades
 
+import android.content.Intent
 import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -8,6 +9,7 @@ import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.example.examen2b.R
+import com.example.examen2b.modelo.Paciente
 import com.example.examen2b.valoresEstaticos.Datos
 
 import com.google.android.gms.maps.CameraUpdateFactory
@@ -21,11 +23,12 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
     private lateinit var mMap: GoogleMap
     private var tienePermisosLocalizacion = false
+    private var idPaciente = -1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_maps)
-
+        idPaciente = this.intent.getIntExtra("idPaciente", -1)
         solicitarPermisosLocalizacion()
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         val mapFragment = supportFragmentManager
@@ -46,21 +49,23 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         mMap = googleMap
         establecerConfiguracionMapa(mMap)
 
-        Datos.listaMedicamento.forEach { medicamento ->
+        Datos.listaMedicamentoCompleta.forEach { medicamento ->
+            Log.i("http", "${medicamento.nombre}")
             var latitud = medicamento.latitud.toDouble()
             var longitud = medicamento.longitud.toDouble()
             anadirMarcador(LatLng(latitud, longitud), medicamento.nombre)
         }
 
-        mMap.setOnMarkerClickListener {marker ->
+        mMap.setOnMarkerClickListener { marker ->
+            irListaMedicamentos(idPaciente)
             Toast.makeText(
                 this,
                 "${marker.title}\n${marker.position}",
                 Toast.LENGTH_LONG
             ).show()
             true
-        }
 
+        }
     }
 
     fun solicitarPermisosLocalizacion() {
@@ -104,5 +109,15 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
     fun anadirMarcador(latLng: LatLng, title: String) {
         mMap.addMarker(MarkerOptions().position(latLng).title(title))
+    }
+
+    fun irListaMedicamentos(idPaciente: Int) {
+        val intent = Intent(
+            this,
+            ListaMedicamentos::class.java
+        )
+        intent.putExtra("idPaciente", idPaciente)
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+        startActivity(intent)
     }
 }

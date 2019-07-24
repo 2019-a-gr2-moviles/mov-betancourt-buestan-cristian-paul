@@ -47,6 +47,7 @@ class ListaMedicamentos : AppCompatActivity() {
                         Log.i("http", "Error: ${ex.message}")
                     }
                     is Result.Success -> {
+                        Datos.listaMedicamentoCompleta = arrayListOf()
                         runOnUiThread {
                             irListaPacientes()
                         }

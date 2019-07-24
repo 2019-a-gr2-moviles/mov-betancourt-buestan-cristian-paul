@@ -7,5 +7,6 @@ class Datos {
     companion object {
         var nombreUsuario: String = ""
         var listaMedicamento: ArrayList<Medicamento> = arrayListOf()
+        var listaMedicamentoCompleta: ArrayList<Medicamento> = arrayListOf()
     }
 }

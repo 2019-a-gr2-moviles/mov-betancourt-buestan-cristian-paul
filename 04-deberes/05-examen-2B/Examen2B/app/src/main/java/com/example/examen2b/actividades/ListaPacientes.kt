@@ -57,7 +57,8 @@ class ListaPacientes : AppCompatActivity() {
 
                         listaPacientes = Klaxon()
                             .parseArray<Paciente>(data)!! as ArrayList<Paciente>
-
+                        Datos.listaMedicamentoCompleta = arrayListOf()
+                        listaCompletaMedicamentos(listaPacientes)
 
                         Log.i("http", "$data")
                         runOnUiThread {
@@ -92,9 +93,19 @@ class ListaPacientes : AppCompatActivity() {
             GestionMedicamentos::class.java
         )
         Datos.listaMedicamento = listaMedicamentos!!
+
+
         intent.putExtra("idPaciente", idPaciente)
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
         startActivity(intent)
+    }
+
+    fun listaCompletaMedicamentos(listaPacientes: ArrayList<Paciente>) {
+        listaPacientes.forEach { paciente ->
+            paciente.medicamentoDePaciente?.forEach { medicamento ->
+                Datos.listaMedicamentoCompleta.add(medicamento)
+            }
+        }
     }
 
     fun irActualizarPaciente(paciente: Paciente) {

@@ -17,7 +17,13 @@ class GestionPacientes : AppCompatActivity() {
         btn_crear_paciente.setOnClickListener {
             irCrearPaciente()
         }
+
+        btn_mapa2.setOnClickListener {
+            obtenerMedicamentos()
+            irMapa()
+        }
     }
+
     private fun irListaPacientes() {
         val intent = Intent(
             this,
@@ -33,6 +39,19 @@ class GestionPacientes : AppCompatActivity() {
             CrearPaciente::class.java
         )
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET)
+        startActivity(intent)
+    }
+
+    fun obtenerMedicamentos() {
+
+    }
+
+    private fun irMapa() {
+        val intent = Intent(
+            this,
+            MapsActivity::class.java
+        )
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
         startActivity(intent)
     }
 
