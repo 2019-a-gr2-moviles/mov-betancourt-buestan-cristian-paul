@@ -3,7 +3,7 @@ package com.example.examen2b.adaptador
 import com.example.examen2b.R
 import com.example.examen2b.actividades.ListaPacientes
 import com.example.examen2b.modelo.Paciente
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -15,11 +15,11 @@ import android.widget.TextView
 class AdaptadorListaPacientes(
     private val listaPacientes: ArrayList<Paciente>,
     private val contexto: ListaPacientes,
-    private val recyclerView: RecyclerView
+    private val recyclerView: androidx.recyclerview.widget.RecyclerView
 ) :
-    RecyclerView.Adapter<AdaptadorListaPacientes.MyViewHolder>() {
+    androidx.recyclerview.widget.RecyclerView.Adapter<AdaptadorListaPacientes.MyViewHolder>() {
 
-    inner class MyViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+    inner class MyViewHolder(view: View) : androidx.recyclerview.widget.RecyclerView.ViewHolder(view) {
         var infoTextView: TextView
         var idTextView: TextView
         var nombresTextView: TextView
@@ -48,19 +48,29 @@ class AdaptadorListaPacientes(
                 val paciente: Paciente? = listaPacientes.find { paciente ->
                     idTextView.text.toString().toInt() == paciente.id
                 }
-                contexto.irListaMedicamentos(idTextView.text.toString().toInt(), paciente!!.medicamentoDePaciente)
+                contexto.irGestionarMedicamentos(idTextView.text.toString().toInt(), paciente!!.medicamentoDePaciente)
             }
 
             actualizarBoton.setOnClickListener {
-
-                // crear paciente
-//                contexto.irActualizarPaciente(paciente)
-
+                var seguro: Boolean = false
+                if (seguroTextView.text.toString() == "SI") {
+                    seguro = true
+                }
+                val paciente = Paciente(
+                    null,
+                    idTextView.text.toString().toInt(),
+                    nombresTextView.text.toString(),
+                    apellidosTextView.text.toString(),
+                    fechaNacimientoTextView.text.toString(),
+                    hijosTextView.text.toString().toInt(),
+                    seguro
+                )
+                contexto.irActualizarPaciente(paciente)
             }
 
             eliminarBoton.setOnClickListener {
                 // crear paciente
-//                contexto.eliminarPaciente(paciente)
+                contexto.eliminarPaciente(idTextView.text.toString().toInt())
 
             }
         }
@@ -102,16 +112,4 @@ class AdaptadorListaPacientes(
 
     }
 
-//    fun crearCliente(id: Int, nombre: String, apellido: String, cedula: String): Cliente {
-//        val cliente = Cliente(
-//            null,
-//            null,
-//            null,
-//            id,
-//            nombre,
-//            apellido,
-//            cedula
-//        )
-//        return cliente
-//    }
 }

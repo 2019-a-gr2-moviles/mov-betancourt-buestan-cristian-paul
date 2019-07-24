@@ -1,22 +1,22 @@
 package com.example.examen2b.actividades
 
 import android.content.Intent
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.examen2b.R
-import com.example.examen2b.valoresEstaticos.Datos
-import kotlinx.android.synthetic.main.activity_gestion.*
-import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_gestion_pacientes.*
 
-class Gestion : AppCompatActivity() {
+class GestionPacientes : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_gestion)
+        setContentView(R.layout.activity_gestion_pacientes)
         btn_gestion_paciente.setOnClickListener {
             irListaPacientes()
         }
-
+        btn_crear_paciente.setOnClickListener {
+            irCrearPaciente()
+        }
     }
     private fun irListaPacientes() {
         val intent = Intent(
@@ -27,8 +27,13 @@ class Gestion : AppCompatActivity() {
         startActivity(intent)
     }
 
-    private fun irMapa() {
-
+    fun irCrearPaciente() {
+        val intent = Intent(
+            this,
+            CrearPaciente::class.java
+        )
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET)
+        startActivity(intent)
     }
 
 }
