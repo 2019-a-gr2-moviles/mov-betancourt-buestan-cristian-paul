@@ -23,5 +23,8 @@
     <string name="txt_num_pas_med" translatable="false">Numero de pastillas</string>
     <string name="txt_gra_med" translatable="false">Gramos a ingerir</string>
     <string name="btn_mapa" translatable="false">Mapa</string>
+    <string name="title_activity_maps" translatable="false">Map</string>
+    <string name="longitud" translatable="false">Longitud</string>
+    <string name="latitud" translatable="false">Latitud</string>
 </resources>
 

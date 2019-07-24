@@ -2,7 +2,7 @@ package com.example.examen2b.adaptador
 
 import com.example.examen2b.R
 import com.example.examen2b.modelo.Paciente
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -15,11 +15,11 @@ import com.example.examen2b.modelo.Medicamento
 class AdaptadorListaMedicamentos(
     private val listaMedicamentos: ArrayList<Medicamento>,
     private val contexto: ListaMedicamentos,
-    private val recyclerView: RecyclerView
+    private val recyclerView: androidx.recyclerview.widget.RecyclerView
 ) :
-    RecyclerView.Adapter<AdaptadorListaMedicamentos.MyViewHolder>() {
+    androidx.recyclerview.widget.RecyclerView.Adapter<AdaptadorListaMedicamentos.MyViewHolder>() {
 
-    inner class MyViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+    inner class MyViewHolder(view: View) : androidx.recyclerview.widget.RecyclerView.ViewHolder(view) {
         var idPacienteTextView: TextView
         var idTextView: TextView
         var nombreTextView: TextView
@@ -45,15 +45,23 @@ class AdaptadorListaMedicamentos(
             actualizarBoton = view.findViewById(R.id.btn_actualizar_med) as Button
 
             actualizarBoton.setOnClickListener {
-
-                // crear paciente
-//                contexto.irActualizarPaciente(paciente)
+                val medicamento = Medicamento(
+                    idTextView.text.toString().toInt(),
+                    gramosTextView.text.toString().toDouble(),
+                    nombreTextView.text.toString(),
+                    composicionTextView.text.toString(),
+                    usoTextView.text.toString(),
+                    fechaCaducidadTextView.text.toString(),
+                    pastillasTextView.text.toString().toInt(),
+                    idPacienteTextView.text.toString().toInt(),
+                    "0", "0"
+                )
+                contexto.irActualizarMedicamento(medicamento)
 
             }
 
             eliminarBoton.setOnClickListener {
-                // crear paciente
-//                contexto.eliminarPaciente(paciente)
+                contexto.eliminarMedicamento(idTextView.text.toString().toInt())
 
             }
         }

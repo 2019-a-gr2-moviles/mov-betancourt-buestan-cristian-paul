@@ -1,18 +1,17 @@
 package com.example.examen2b.actividades
 
 import android.content.Intent
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.support.v7.widget.DefaultItemAnimator
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
 import android.util.Log
 import com.example.examen2b.R
 import com.example.examen2b.adaptador.AdaptadorListaMedicamentos
 import com.example.examen2b.modelo.Medicamento
 import com.example.examen2b.valoresEstaticos.Datos
+import com.example.examen2b.valoresEstaticos.Servidor
+import com.github.kittinunf.fuel.httpDelete
+import com.github.kittinunf.result.Result
 import kotlinx.android.synthetic.main.activity_lista_medicamentos.*
-import kotlinx.android.synthetic.main.activity_lista_pacientes.*
 
 class ListaMedicamentos : AppCompatActivity() {
 
@@ -23,30 +22,60 @@ class ListaMedicamentos : AppCompatActivity() {
         val idPaciente = this.intent.getIntExtra("idPaciente", -1)
         iniciarRecyclerView(Datos.listaMedicamento, this, rv_medicamentos)
 
-        btn_crear_medicamento.setOnClickListener {
-            irCrearMedicamento()
-        }
     }
 
     fun iniciarRecyclerView(
         listaMedicamentos: ArrayList<Medicamento>,
         actividad: ListaMedicamentos,
-        recyclerView: RecyclerView
+        recyclerView: androidx.recyclerview.widget.RecyclerView
     ) {
         val adaptadorMedicamento = AdaptadorListaMedicamentos(listaMedicamentos, actividad, recyclerView)
         rv_medicamentos.adapter = adaptadorMedicamento
-        rv_medicamentos.itemAnimator = DefaultItemAnimator()
-        rv_medicamentos.layoutManager = LinearLayoutManager(actividad)
+        rv_medicamentos.itemAnimator = androidx.recyclerview.widget.DefaultItemAnimator()
+        rv_medicamentos.layoutManager = androidx.recyclerview.widget.LinearLayoutManager(actividad)
 
         adaptadorMedicamento.notifyDataSetChanged()
     }
 
-    fun irCrearMedicamento() {
+    fun eliminarMedicamento(idMedicamento: Int) {
+        val url = Servidor.url("medicamento") + "?id=${idMedicamento}"
+        url.httpDelete()
+            .responseString { request, response, result ->
+                when (result) {
+                    is Result.Failure -> {
+                        val ex = result.getException()
+                        Log.i("http", "Error: ${ex.message}")
+                    }
+                    is Result.Success -> {
+                        runOnUiThread {
+                            irListaPacientes()
+                        }
+                    }
+                }
+            }
+    }
+
+    fun irListaPacientes() {
         val intent = Intent(
             this,
-            CrearMedicamento::class.java
+            ListaPacientes::class.java
         )
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
+        startActivity(intent)
+    }
+
+
+    fun irActualizarMedicamento(medicamento: Medicamento) {
+        val intent = Intent(
+            this,
+            ActualizarMedicamento::class.java
+        )
+        intent.putExtra("id", medicamento.id)
+        intent.putExtra("uso", "${medicamento.usadoPara}")
+        intent.putExtra("gramos", medicamento.gramosAIngerir)
+        intent.putExtra("composicion", "${medicamento.composicion}")
+        intent.putExtra("nombre", "${medicamento.nombre}")
+        intent.putExtra("fechaCaducidad", "${medicamento.fechaCaducidad}")
+        intent.putExtra("pastillas", medicamento.numeroPastillas)
         startActivity(intent)
     }
 

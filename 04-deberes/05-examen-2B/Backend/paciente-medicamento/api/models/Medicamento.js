@@ -40,6 +40,14 @@ module.exports = {
       type: 'number',
       min: 0
     },
+    longitud: {
+      required: true,
+      type: 'string'
+    },
+    latitud: {
+      required: true,
+      type: 'string'
+    },
     idPaciente: {         // Nombre del fk para la relación
       model: 'paciente',   // Nombre del modelo a relacionar (padre) 
       required: true   // OPCIONAL-> Simpre se ingrese el fk

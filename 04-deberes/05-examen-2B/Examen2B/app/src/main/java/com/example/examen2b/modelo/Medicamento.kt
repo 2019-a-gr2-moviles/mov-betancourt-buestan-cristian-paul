@@ -8,7 +8,9 @@ class Medicamento(
     var usadoPara: String,
     var fechaCaducidad: String,
     var numeroPastillas: Int,
-    var idPaciente: Int
-){
+    var idPaciente: Int,
+    var longitud: String,
+    var latitud: String
+) {
 
 }
