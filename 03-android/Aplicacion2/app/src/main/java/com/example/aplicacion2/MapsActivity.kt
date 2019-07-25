@@ -75,8 +75,17 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback,
         // Add a marker in Sydney and move the camera
         val epn = LatLng(-0.210169, -78.488632)
         val titulo = "EPN"
-        anadirMArcador(epn, titulo)
+//        var markerOptions1 = MarkerOptions()
+//        anadirMArcador(markerOptions1, epn, titulo)
+        anadirMArcador( epn, titulo)
+
+        val epn2 = LatLng(-0.210160, -78.488625)
+        val titulo2 = "EPN2"
+//        var markerOptions2 = MarkerOptions()
+//        anadirMArcador(markerOptions2, epn2, titulo2)
+        anadirMArcador( epn2, titulo2)
         moverCamaraConZoom(epn)
+
 
         val polyLineaUno = googleMap.addPolyline(
             PolylineOptions().clickable(true).add(
@@ -98,10 +107,12 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback,
 //        poligonoUno.fillColor = -0xc771c4
         poligonoUno.fillColor = Color.RED
 
-        mMap.setOnMarkerClickListener {
-            Toast.makeText(this, "${mMap.myLocation.longitude} ${mMap.myLocation.latitude}", Toast.LENGTH_LONG).show();
-            Toast.makeText(this, "${mMap.myLocation.longitude} ${mMap.myLocation.latitude}", Toast.LENGTH_LONG).show();
+        mMap.setOnMarkerClickListener { marker ->
+            Toast.makeText(
+                this, "${marker.title}", Toast.LENGTH_LONG
+            ).show();
             true
+
         }
     }
 
@@ -116,7 +127,8 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback,
         }
     }
 
-    fun anadirMArcador(latLng: LatLng, title: String) {
+    fun anadirMArcador( latLng: LatLng, title: String) {
+
         mMap.addMarker(MarkerOptions().position(latLng).title(title))
     }
 

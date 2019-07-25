@@ -4,7 +4,7 @@ class Servidor {
 
     companion object {
 
-        private val ip = "172.29.48.214"
+        private val ip = "172.29.51.143"
         private val puerto = "1337"
 
         fun url(ruta: String): String {
